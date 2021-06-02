@@ -5,6 +5,10 @@ class JeweleryProduct {
         this.jewelry_type = jewelry_type
     }
 
+    static fetchProducts() {
+        return fetch('localhost:3000')
+    }
+
     static form() {
         return `
             <h4>Form for Custom Jewelery</h4>
