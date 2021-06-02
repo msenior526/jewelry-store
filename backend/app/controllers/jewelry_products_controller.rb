@@ -5,7 +5,7 @@ class JewelryProductsController < ApplicationController
   def index
     @jewelry_products = JewelryProduct.all
 
-    render json: @jewelry_products
+    render json: JewelryProductSerializer.new(@jewelry_products).serializable_hash.to_json
   end
 
   # GET /jewelry_products/1
