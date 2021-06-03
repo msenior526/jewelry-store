@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', event => {
     const renderJewelryForm = () => {
-        const form = document.getElementsByTagName('form');
-        debugger
+        const form = document.getElementById('jewelry-form');
         form.hidden = false;
         return form;
     }
