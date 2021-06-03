@@ -13,7 +13,26 @@
 </head>
 <body>
     <h1 id="title">Jewelry Store</h1>
-    <a href='#' id="personalize-link">Click here to personalize your Jewelry!</h3>
+    <a href='#' id="personalize-link">Click here to personalize your Jewelry!</a>
+        <h4>Form for Custom Jewelry</h4>
+            <form hidden>
+                <label for='name'>Name:</label>
+                <input type='text' id="custom-name" placeholder="Custom Name"><br>
+        
+                <label for='font-family'>Font Family:</label>
+                <input type='text' id='custom-font-family'><br>
+        
+                <label for='metal-type'>Metal-type:</label>
+                <input type='text' id='custom-metal-type'><br>
+        
+                <label for='size'>Size:</label>
+                <input type='text' id='custom-size'><br>
+        
+                <label for='quantity'>Quantity:</label>
+                <input type='number' id='custom-quantity'><br>
+
+                <input type='submit' value="Add To Cart">
+            </form>
     <ul id='jewelry-list'>
 
     </ul>
