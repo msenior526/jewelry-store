@@ -1,11 +1,4 @@
-class JewelryProduct {
-    constructor(name, metal_type, jewelry_type) {
-        this.name = name,
-        this.metal_type = metal_type,
-        this.jewelry_type = jewelry_type
-    }
-
-    static form() {
+const jewelryForm = () => {
         return `
             <h4>Form for Custom Jewelry</h4>
             <img src='images/ring-size-chart.jpeg' alt="Ring Size Chart" id="ring-size-chart">
@@ -28,6 +21,3 @@ class JewelryProduct {
                 <input type='submit' value="Add To Cart">
             </form>`;
     }
-}
-
-JewelryProduct.fetchProducts();
