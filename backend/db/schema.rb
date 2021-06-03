@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_01_200000) do
+ActiveRecord::Schema.define(version: 2021_06_03_181919) do
 
   create_table "jewelry_products", force: :cascade do |t|
     t.string "name"
@@ -22,10 +22,18 @@ ActiveRecord::Schema.define(version: 2021_06_01_200000) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "jewelry_type"
+    t.integer "user_id"
+    t.float "price"
     t.index ["cart_id"], name: "index_jewelry_products_on_cart_id"
   end
 
   create_table "shopping_carts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
