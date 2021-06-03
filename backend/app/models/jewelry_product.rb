@@ -1,4 +1,7 @@
 class JewelryProduct < ApplicationRecord
+    belongs_to :user
+    belongs_to :shopping_cart
+    
     validates :font_family, :size, presence: true
     validates :name, presence: true, length: {maximum: 8}
     validates :quantity, numericality: true
