@@ -11,7 +11,7 @@ class JewelryProduct {
         .then(resp => resp.json())
         .then(json => {
             return json.data.forEach((product) => {
-                 document.appendChild(product);
+                document.appendChild(product);
             })
         })
     }
