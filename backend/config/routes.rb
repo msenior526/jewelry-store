@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :shopping_carts
   resources :jewelry_products
 
