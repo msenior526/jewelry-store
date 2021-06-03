@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_03_201824) do
+ActiveRecord::Schema.define(version: 2021_06_03_202653) do
 
   create_table "jewelry_products", force: :cascade do |t|
     t.string "name"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2021_06_03_201824) do
     t.string "jewelry_type"
     t.float "price"
     t.integer "user_id"
-    t.integer "cart_id"
-    t.index ["cart_id"], name: "index_jewelry_products_on_cart_id"
+    t.integer "shopping_cart_id"
+    t.index ["shopping_cart_id"], name: "index_jewelry_products_on_shopping_cart_id"
     t.index ["user_id"], name: "index_jewelry_products_on_user_id"
   end
 
