@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', event => {
 
     
     const images = document.getElementsByClassName('jewelry-img')
-        for (i = 0; i < images.length; i++) {
+    for (i = 0; i < images.length; i++) {
         images[i].addEventListener('click', e => { 
             return renderJewelryForm(jewelryForm())
         })
-        }
+    }
 })
         
