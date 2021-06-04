@@ -4,8 +4,10 @@ class ShoppingCartsController < ApplicationController
   # GET /shopping_carts
   def index
     @shopping_carts = ShoppingCart.all
-
-    render json: @shopping_carts
+    options = {
+      include: [:user]
+    }
+    render json: ShoppingCartSerializer.new(@shopping_carts, options).serializable_hash.to_json
   end
 
   # GET /shopping_carts/1
