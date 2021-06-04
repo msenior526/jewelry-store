@@ -10,18 +10,24 @@
 </head>
 <body>
     <nav>
+        <h1 id="title">Jewelry Store</h1>
         <!-- NAVBAR GOES HERE -->
     </nav>
-    <h1 id="title">Jewelry Store</h1>
-    <div>
-        <!-- JEWELRY IMAGES GO HERE (3) -->
-        <img src="images/silver-ring.jpg" alt="Personalized silver ring with name Ashley" class="jewelry-img">
-        <img src="images/rose-gold-necklace.jpg" alt="Personalized rose gold necklace with name Ashley" class="jewelry-img">
-        <img src="images/gold-bracelet.jpeg" alt="Personalized gold bracelet with name Ashley" class="jewelry-img">
+    <div class="jewelry-images">
+        <div class="jewelry-img">
+            <img src="images/silver-ring.jpg" alt="Personalized silver ring with name Ashley" >
+        </div>
+        <div class="jewelry-img">
+            <img src="images/rose-gold-necklace.jpg" alt="Personalized rose gold necklace with name Ashley" >
+        </div>
+        <div class="jewelry-img">
+            <img src="images/gold-bracelet.jpeg" alt="Personalized gold bracelet with name Ashley" >
+        </div>
     </div>
     <a href='#' id="personalize-link">Click here to personalize your Jewelry!</a>
     <div id="jewelry-form" hidden>
         <h4>Form for Custom Jewelry</h4>
+        <span class="close">&times</span>
         <form>
             <label for='name'>Name:</label>
             <input type='text' id="custom-name" placeholder="Custom Name"><br>
