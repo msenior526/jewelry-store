@@ -20,4 +20,6 @@ const jewelryForm = () => {
 
                 <input type='submit' value="Add To Cart">
             </form>`;
-    }
+}
+
+const jewelryList = document.getElementById('jewelry-list');

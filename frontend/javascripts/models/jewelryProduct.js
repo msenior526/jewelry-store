@@ -10,5 +10,8 @@ class JewelryProduct {
     }
 
    static display() {
+       let products = JewelryProduct.all
+        debugger
+       jewelryList.appendChild();
    }
 }
