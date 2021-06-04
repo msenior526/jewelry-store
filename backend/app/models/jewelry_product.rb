@@ -7,4 +7,34 @@ class JewelryProduct < ApplicationRecord
     validates :quantity, numericality: true
     validates :metal_type, inclusion: {in: ["yellow gold", "silver", "rose gold", "white gold"]}
     validates :jewelry_type, inclusion: {in: ["necklace", "ring", "bracelet"]}
+
+    def calculate_price
+        new_price = 0
+        if (self.metal_type == 'yellow gold' && self.jewelry_type == 'necklace')
+                new_price = 150.00 * self.quantity 
+        elsif (self.metal_type == 'rose gold' && self.jewelry_type == 'necklace')
+                new_price = 140.00 * self.quantity 
+        elsif (self.metal_type == 'silver' && self.jewelry_type == 'necklace')
+                new_price = 125.00 * self.quantity 
+        
+        elsif (self.metal_type == 'yellow gold' && self.jewelry_type == 'bracelet')
+                new_price = 100.00 * self.quantity 
+        elsif (self.metal_type == 'rose gold' && self.jewelry_type == 'bracelet')
+                new_price = 90.00 * self.quantity 
+        elsif (self.metal_type == 'silver' && self.jewelry_type == 'bracelet')
+                new_price = 75.00 * self.quantity 
+ 
+        elsif (self.metal_type == 'yellow gold' && self.jewelry_type == 'ring')
+                new_price = 100.00 * self.quantity 
+        elsif (self.metal_type == 'rose gold' && self.jewelry_type == 'ring')
+                new_price = 90.00 * self.quantity 
+        elsif (self.metal_type == 'silver' && self.jewelry_type == 'ring')
+                new_price = 75.00 * self.quantity 
+ 
+        end 
+    end
+
+    def price
+        self.price = calculate_price
+    end
 end
