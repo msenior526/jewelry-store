@@ -1,6 +1,6 @@
 class JewelryProduct < ApplicationRecord
     belongs_to :user
-    belongs_to :shopping_cart
+#     belongs_to :shopping_cart
     
     validates :font_family, :size, presence: true
     validates :name, presence: true, length: {maximum: 8}
@@ -30,8 +30,8 @@ class JewelryProduct < ApplicationRecord
                 new_price = 90.00 * self.quantity 
         elsif (self.metal_type == 'silver' && self.jewelry_type == 'ring')
                 new_price = 75.00 * self.quantity 
- 
         end 
+        return new_price
     end
 
     def price
