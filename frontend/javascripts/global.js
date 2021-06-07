@@ -1,3 +1,5 @@
+const submitButton = document.querySelector("input[value='Add To Cart']");
+
 const jewelryForm = () => {
         return `
             <h4>Form for Custom Jewelry</h4>
