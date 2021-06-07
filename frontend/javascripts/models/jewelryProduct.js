@@ -13,15 +13,14 @@ class JewelryProduct {
 
     display() {
         let listItem = document.createElement('li')
-        return this.all.forEach(product => {
-            listItem.innerHTML = `
-        <h3>${product.name}</h3>
-        <p>Price: ${product.price}</p>
-        <p>quantity: ${product.quantity}</p>
-        <p>metal_type: ${product.metalType}</p>
-        <p>jewelry_type: ${product.jewelryType}</p>
+        listItem.innerHTML = `
+        <h3>${this.name}</h3>
+        <p>Size: ${this.size}</p>
+        <p>Price: ${this.price}</p>
+        <p>quantity: ${this.quantity}</p>
+        <p>metal_type: ${this.metalType}</p>
+        <p>jewelry_type: ${this.jewelryType}</p>
         `
-        jewelryList.appendChild(listItem);
-        })
+        return jewelryList.appendChild(listItem);
    }
 }
