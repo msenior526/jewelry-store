@@ -11,4 +11,16 @@ class JewelryProductApi {
         })
         .catch(err => alert(err))
     }
+
+    static createProducts() {
+        debugger
+        return fetch("http://localhost:3000/jewelry_products",  {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+          });
+    }
 }
