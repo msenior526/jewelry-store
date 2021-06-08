@@ -21,13 +21,15 @@ document.addEventListener('DOMContentLoaded', event => {
     submitButton.addEventListener('click', event => {
         event.preventDefault();
         let formData = {
-            name: nameInput,
-            username: usernameInput,
-            quantity: quantityInput,
-            size: sizeInput,
-            metalType: metalInput,
-            jewelryType: typeInput,
+            name: nameInput.value,
+            user: usernameInput.value,
+            quantity: quantityInput.value,
+            size: sizeInput.value,
+            metal_type: metalInput.value,
+            font_family: fontInput.value,
+            jewelry_type: typeInput.value,
         }
+        debugger
         return JewelryProductApi.createProducts(formData);
     })
 })

@@ -46,6 +46,6 @@ class JewelryProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def jewelry_product_params
-      params.fetch(:jewelry_product, {})
+      params.require(:jewelry_product).permit(:name, :metal_type, :font_family, :size, :quantity, :jewelry_type, :user_id)
     end
 end
