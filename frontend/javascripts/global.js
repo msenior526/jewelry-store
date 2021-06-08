@@ -4,5 +4,7 @@ const fontInput = document.querySelector('input#custom-font');
 const metalInput = document.querySelector('input#custom-metal');
 const sizeInput = document.querySelector('input#custom-size');
 const quantityInput = document.querySelector('input#custom-quantity');
+const typeInput = document.getElementById('jewelry-product-type')
+const usernameInput = document.getElementById('username')
 const jewelryForm = () => document.querySelector('div#jewelry-form');
 const jewelryList = document.getElementById('jewelry-list');

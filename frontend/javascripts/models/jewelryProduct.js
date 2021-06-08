@@ -1,7 +1,8 @@
 class JewelryProduct {
     static all = []
-    constructor(id, name,  price, quantity, size, jewelryType, metalType) {
+    constructor(id, username, name,  price, quantity, size, jewelryType, metalType, userId) {
         this.id = id,
+        this.username = username,
         this.name = name,
         this.price = price,
         this.quantity = quantity,
@@ -11,10 +12,15 @@ class JewelryProduct {
         JewelryProduct.all.push(this)
     }
 
+    get user() {
+
+    }
+
     display() {
         let listItem = document.createElement('li')
         listItem.innerHTML = `
         <h3>${this.name}</h3>
+        <p>Created by: ${this.username}</p>
         <p>Size: ${this.size}</p>
         <p>Price: ${this.price}</p>
         <p>quantity: ${this.quantity}</p>

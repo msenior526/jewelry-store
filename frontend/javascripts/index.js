@@ -17,5 +17,18 @@ document.addEventListener('DOMContentLoaded', event => {
             return renderJewelryForm(jewelryForm())
         })
     }
+
+    submitButton.addEventListener('click', event => {
+        event.preventDefault();
+        let formData = {
+            name: nameInput,
+            username: usernameInput,
+            quantity: quantityInput,
+            size: sizeInput,
+            metalType: metalInput,
+            jewelryType: typeInput,
+        }
+        return JewelryProductApi.createProducts(formData);
+    })
 })
         

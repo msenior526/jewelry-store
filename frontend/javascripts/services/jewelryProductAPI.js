@@ -5,15 +5,16 @@ class JewelryProductApi {
         .then(json => {
                 return json.data.forEach((product) => {
                     const {id, name, price, quantity, size, jewelry_type, metal_type} =  product.attributes;
-                    let jewelry = new JewelryProduct(id, name, price, quantity, size, jewelry_type, metal_type);
+                    debugger
+                    const username = product.attributes.user.username;
+                    let jewelry = new JewelryProduct(id, username, name, price, quantity, size, jewelry_type, metal_type);
                     jewelry.display();
             });
         })
         .catch(err => alert(err))
     }
 
-    static createProducts() {
-        debugger
+    static createProducts(data) {
         return fetch("http://localhost:3000/jewelry_products",  {
             method: "POST",
             headers: {
@@ -21,6 +22,9 @@ class JewelryProductApi {
               "Accept": "application/json"
             },
             body: JSON.stringify(data)
-          });
+          })
+          .then(resp => resp.json())
+          .then(json => json)
+          .catch(err => alert(err));
     }
 }
