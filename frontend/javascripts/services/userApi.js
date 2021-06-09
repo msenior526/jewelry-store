@@ -4,8 +4,10 @@ class UserApi {
         .then(resp => resp.json())
         .then(json => {
             json.data.forEach(user => {
+                const products = user.attributes.jewelry_product_ids
                 const {id, username} = user.attributes;
-                const newUser = new User(id, username);
+                const newUser = new User(id, username, products);
+                debugger
                 return newUser.display();
             })
         })

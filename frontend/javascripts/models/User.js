@@ -1,8 +1,9 @@
 class User {
     static all = [];
-    constructor(id, username) {
+    constructor(id, username, products = []) {
         this.id = id, 
         this.username = username,
+        this.products = products
         User.all.push(this)
     }
 
