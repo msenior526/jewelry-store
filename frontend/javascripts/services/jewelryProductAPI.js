@@ -5,8 +5,7 @@ class JewelryProductApi {
         .then(json => {
                 return json.data.forEach((product) => {
                     const {id, name, price, quantity, size, jewelry_type, metal_type, font_family} =  product.attributes;
-                    const userId = product.attributes.user.id;
-                    // debugger
+                    const userId = product.attributes.user_id;
                     let jewelry = new JewelryProduct(id, name, price, quantity, size, jewelry_type, metal_type, userId, font_family);
                     jewelry.display();
             });
