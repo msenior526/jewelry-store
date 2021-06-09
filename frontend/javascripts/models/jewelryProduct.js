@@ -13,9 +13,24 @@ class JewelryProduct {
         JewelryProduct.all.push(this)
     }
 
-    get user() {
-
+    static handleSubmit = () => {
+        submitButton.addEventListener('click', event => {
+            event.preventDefault();
+            let formData = {
+                name: nameInput.value,
+                username: usernameInput.value,
+                quantity: quantityInput.value,
+                size: sizeInput.value,
+                metal_type: metalInput.value,
+                font_family: fontInput.value,
+                jewelry_type: typeInput.value,
+            }
+        // debugger
+        return JewelryProductApi.createProducts(formData);
+        })
     }
+
+    
 
     display() {
         let listItem = document.createElement('li')

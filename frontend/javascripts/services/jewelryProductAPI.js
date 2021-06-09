@@ -25,7 +25,7 @@ class JewelryProductApi {
           })
           .then(resp => resp.json())
           .then(json => {
-            // debugger
+            debugger
               let newJewels = new JewelryProduct(json);
           })
           .catch(err => alert(err));
