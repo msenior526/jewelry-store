@@ -29,7 +29,7 @@ class JewelryProductApi {
             for (const property in json) {
               alert(`${property} ${json[property]}`)
             }
-            debugger
+            // debugger
               // let newJewels = new JewelryProduct(json);
               // debugger
               // newJewels.display();

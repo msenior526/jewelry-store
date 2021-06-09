@@ -13,6 +13,10 @@ class JewelryProduct {
         JewelryProduct.all.push(this)
     }
 
+    get username() {
+        return User.findById(this.userId).username
+    }
+
     static handleSubmit = () => {
         submitButton.addEventListener('click', event => {
             event.preventDefault();
