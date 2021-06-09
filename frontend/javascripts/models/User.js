@@ -16,7 +16,10 @@ class User {
     static handleSubmit() {
         submitUserBtn.addEventListener('click', e => {
             e.preventDefault;
-            debugger
+            let formData = {
+                username: document.querySelector('input').value
+            }
+            UserApi.createUsers(formData)
         }
         )
     }

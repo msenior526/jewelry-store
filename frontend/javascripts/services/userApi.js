@@ -9,6 +9,7 @@ class UserApi {
                 return newUser.display();
             })
         })
+        .catch(err => alert(err))
     }
 
     static createUsers(data) {
@@ -20,8 +21,7 @@ class UserApi {
             },
             body: JSON.stringify(data)
         })
-        .then(resp => {
-            // debugger
-        })
+        .then(resp => {debugger})
+        .catch(err => alert(err))
     }
 }

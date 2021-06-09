@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', event => {
 
     JewelryProductApi.fetchProducts();
+    User.handleSubmit();
     UserApi.fetchUsers();
 
     const renderJewelryForm = () => {
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', event => {
             font_family: fontInput.value,
             jewelry_type: typeInput.value,
         }
-        debugger
+        // debugger
         return JewelryProductApi.createProducts(formData);
     })
 })
