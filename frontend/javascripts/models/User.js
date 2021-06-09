@@ -2,7 +2,8 @@ class User {
     static all = [];
     constructor(id, username) {
         this.id = id, 
-        this.username = username
+        this.username = username,
+        User.all.push(this)
     }
 
     display() {
@@ -22,5 +23,9 @@ class User {
             UserApi.createUsers(formData)
         }
         )
+    }
+
+    static findByName(username) {
+        return this.all.find(user => user.username === username)
     }
 }
