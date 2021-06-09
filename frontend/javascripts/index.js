@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', event => {
 
-    JewelryProductApi.fetchProducts()
+    JewelryProductApi.fetchProducts();
+    UserApi.fetchUsers();
 
     const renderJewelryForm = () => {
         const form = document.getElementById('jewelry-form');
