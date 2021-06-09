@@ -9,7 +9,7 @@ class JewelryProductApi {
                     // let user =  User.findById(userId);
                     let jewelry = new JewelryProduct(id, name, price, quantity, size, jewelry_type, metal_type, font_family, user_id);
                     // debugger
-                    jewelry.display();
+                    JewelryProduct.display(jewelry);
             });
         })
         .catch(err => alert(err))

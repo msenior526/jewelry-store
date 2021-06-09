@@ -7,7 +7,6 @@ class UserApi {
                 const products = user.attributes.jewelry_product_ids
                 const {id, username} = user.attributes;
                 const newUser = new User(id, username, products);
-                debugger
                 return newUser.display();
             })
         })

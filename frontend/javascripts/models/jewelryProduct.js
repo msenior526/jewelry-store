@@ -34,18 +34,19 @@ class JewelryProduct {
         return this.all.filter(prod => prod.id === id)
     }
 
-    
 
-    display() {
+
+    static display = (prod) => {
         let listItem = document.createElement('li')
+        // debugger
         listItem.innerHTML = `
-        <h3>${this.name}</h3>
-        <p>Created by: ${this.userId}</p>
-        <p>Size: ${this.size}</p>
-        <p>Price: ${this.price}</p>
-        <p>quantity: ${this.quantity}</p>
-        <p>metal_type: ${this.metalType}</p>
-        <p>jewelry_type: ${this.jewelryType}</p>
+        <h3>${prod.name}</h3>
+        <p>Created by: ${prod.userId}</p>
+        <p>Size: ${prod.size}</p>
+        <p>Price: ${prod.price}</p>
+        <p>quantity: ${prod.quantity}</p>
+        <p>metal_type: ${prod.metalType}</p>
+        <p>jewelry_type: ${prod.jewelryType}</p>
         `
         return jewelryList.appendChild(listItem);
    }
