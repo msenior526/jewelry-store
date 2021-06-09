@@ -30,6 +30,10 @@ class JewelryProduct {
         })
     }
 
+    static findById(id) {
+        return this.all.filter(prod => prod.id === id)
+    }
+
     
 
     display() {
