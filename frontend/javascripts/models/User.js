@@ -10,6 +10,6 @@ class User {
         listItem.innerHTML = `
         <h3>${this.username}</h3>
         `
-        return jewelryList.appendChild(listItem);
+        return userList.appendChild(listItem);
     }
 }

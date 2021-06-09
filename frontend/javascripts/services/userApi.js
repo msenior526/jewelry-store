@@ -6,7 +6,7 @@ class UserApi {
             json.data.forEach(user => {
                 const {id, username} = user.attributes;
                 const newUser = new User(id, username);
-                return newUser;
+                return newUser.display();
             })
         })
     }
