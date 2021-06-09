@@ -11,21 +11,21 @@ class JewelryProduct < ApplicationRecord
 
     def calculate_price
         new_price = 0
-        if (self.metal_type == 'yellow gold' && self.jewelry_type == 'necklace')
-                new_price = 150.00 * self.quantity 
+        if ((self.metal_type == 'yellow gold' || self.metal_type == 'white gold') && self.jewelry_type == 'necklace')
+                new_price = 150.00 * self.quantity
         elsif (self.metal_type == 'rose gold' && self.jewelry_type == 'necklace')
                 new_price = 140.00 * self.quantity 
         elsif (self.metal_type == 'silver' && self.jewelry_type == 'necklace')
                 new_price = 125.00 * self.quantity 
         
-        elsif (self.metal_type == 'yellow gold' && self.jewelry_type == 'bracelet')
+        elsif ((self.metal_type == 'yellow gold' || self.metal_type == 'white gold') && self.jewelry_type == 'bracelet')
                 new_price = 100.00 * self.quantity 
         elsif (self.metal_type == 'rose gold' && self.jewelry_type == 'bracelet')
                 new_price = 90.00 * self.quantity 
         elsif (self.metal_type == 'silver' && self.jewelry_type == 'bracelet')
                 new_price = 75.00 * self.quantity 
  
-        elsif (self.metal_type == 'yellow gold' && self.jewelry_type == 'ring')
+        elsif ((self.metal_type == 'yellow gold' || self.metal_type == 'white gold') && self.jewelry_type == 'ring')
                 new_price = 100.00 * self.quantity 
         elsif (self.metal_type == 'rose gold' && self.jewelry_type == 'ring')
                 new_price = 90.00 * self.quantity 

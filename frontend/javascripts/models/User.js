@@ -21,8 +21,7 @@ class User {
                 username: document.querySelector('input').value
             }
             UserApi.createUsers(formData)
-        }
-        )
+        })
     }
 
     static findByName(username) {
