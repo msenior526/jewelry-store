@@ -21,7 +21,9 @@ class UserApi {
             },
             body: JSON.stringify(data)
         })
-        .then(resp => {debugger})
-        .catch(err => alert(err))
+        .then(resp => resp.json())
+        .then(json => {console.log(json)})
+        // Add error message if name is taken
+        .catch(err => console.log(err))
     }
 }
