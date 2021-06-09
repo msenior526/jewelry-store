@@ -12,4 +12,12 @@ class User {
         `
         return userList.appendChild(listItem);
     }
+
+    static handleSubmit() {
+        submitUserBtn.addEventListener('click', e => {
+            e.preventDefault;
+            debugger
+        }
+        )
+    }
 }
