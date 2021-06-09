@@ -16,12 +16,13 @@ class User {
     }
 
     static handleSubmit() {
-        submitUserBtn.addEventListener('click', e => {
-            e.preventDefault;
+        submitUserBtn.addEventListener('click', event => {
+            debugger
+            event.preventDefault;
             let formData = {
                 username: document.getElementById('username').value
             }
-            UserApi.createUsers(formData)
+            return UserApi.createUsers(formData);
         })
     }
 

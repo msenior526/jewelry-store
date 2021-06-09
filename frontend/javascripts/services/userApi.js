@@ -14,6 +14,8 @@ class UserApi {
     }
 
     static createUsers(data) {
+        debugger
+        // PAGE RELOADS HERE. WHY?
         return fetch('http://localhost:3000/users', {
             method: 'POST', 
             headers: {
@@ -22,8 +24,6 @@ class UserApi {
             },
             body: JSON.stringify(data)
         })
-        .then(resp => resp.json())
-        .then(json => {console.log(json)})
         // Add error message if name is taken
         .catch(err => console.log(err))
     }

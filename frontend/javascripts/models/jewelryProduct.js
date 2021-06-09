@@ -30,7 +30,9 @@ class JewelryProduct {
                 font_family: fontInput.value,
                 jewelry_type: typeInput.value,
             }
-        return JewelryProductApi.createProducts(formData);
+            JewelryProductApi.createProducts(formData);
+            return jewelryForm().hidden = true;
+
         })
     }
 
