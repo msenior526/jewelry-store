@@ -20,6 +20,8 @@ class UserApi {
             },
             body: JSON.stringify(data)
         })
-        .then(resp => {debugger})
+        .then(resp => {
+            // debugger
+        })
     }
 }
