@@ -7,7 +7,7 @@ class JewelryProductApi {
                     let {id, name, price, quantity, size, jewelry_type, metal_type, font_family} =  product.attributes;
                     let user_id = product.attributes.user_id;
                     // let user =  User.findById(userId);
-                    let jewelry = new JewelryProduct(id, name, price, quantity, size, jewelry_type, metal_type, user_id, font_family);
+                    let jewelry = new JewelryProduct(id, name, price, quantity, size, jewelry_type, metal_type, font_family, user_id);
                     // debugger
                     jewelry.display();
             });
