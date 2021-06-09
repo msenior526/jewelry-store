@@ -4,9 +4,11 @@ class JewelryProductApi {
         .then(resp => resp.json())
         .then(json => {
                 return json.data.forEach((product) => {
-                    const {id, name, price, quantity, size, jewelry_type, metal_type, font_family} =  product.attributes;
-                    const userId = product.attributes.user_id;
-                    let jewelry = new JewelryProduct(id, name, price, quantity, size, jewelry_type, metal_type, userId, font_family);
+                    let {id, name, price, quantity, size, jewelry_type, metal_type, font_family} =  product.attributes;
+                    let user_id = product.attributes.user_id;
+                    // let user =  User.findById(userId);
+                    let jewelry = new JewelryProduct(id, name, price, quantity, size, jewelry_type, metal_type, user_id, font_family);
+                    // debugger
                     jewelry.display();
             });
         })
@@ -24,8 +26,13 @@ class JewelryProductApi {
           })
           .then(resp => resp.json())
           .then(json => {
+            for (const property in json) {
+              alert(`${property} ${json[property]}`)
+            }
             debugger
-              let newJewels = new JewelryProduct(json);
+              // let newJewels = new JewelryProduct(json);
+              // debugger
+              // newJewels.display();
           })
           .catch(err => alert(err));
     }

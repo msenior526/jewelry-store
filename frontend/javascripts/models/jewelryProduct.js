@@ -1,6 +1,6 @@
 class JewelryProduct {
     static all = []
-    constructor(id, name,  price, quantity, size, jewelry_type, metal_type, font_family, userId) {
+    constructor(id, name,  price, quantity, size, jewelry_type, metal_type, font_family, user_id) {
         this.id = id,
         this.name = name,
         this.price = price,
@@ -9,23 +9,23 @@ class JewelryProduct {
         this.jewelryType = jewelry_type,
         this.metalType = metal_type,
         this.fontFamily = font_family,
-        this.userId = userId,
+        this.userId = user_id,
         JewelryProduct.all.push(this)
     }
 
     static handleSubmit = () => {
         submitButton.addEventListener('click', event => {
             event.preventDefault();
+            const user = User.findByName(`${usernameInput.value}`)
             let formData = {
                 name: nameInput.value,
-                username: usernameInput.value,
+                user_id: user.id,
                 quantity: quantityInput.value,
                 size: sizeInput.value,
                 metal_type: metalInput.value,
                 font_family: fontInput.value,
                 jewelry_type: typeInput.value,
             }
-        // debugger
         return JewelryProductApi.createProducts(formData);
         })
     }
