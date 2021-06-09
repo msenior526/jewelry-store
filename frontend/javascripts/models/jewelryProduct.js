@@ -1,6 +1,6 @@
 class JewelryProduct {
     static all = []
-    constructor(id, name,  price, quantity, size, jewelry_type, metal_type, font_family, user_id) {
+    constructor({id, name,  price, quantity, size, jewelry_type, metal_type, font_family, user_id}) {
         this.id = id,
         this.name = name,
         this.price = price,
@@ -43,9 +43,10 @@ class JewelryProduct {
     static display = (prod) => {
         let listItem = document.createElement('li')
         // debugger
+        let user = User.findById(prod.userId)
         listItem.innerHTML = `
         <h3>${prod.name}</h3>
-        <p>Created by: ${prod.userId}</p>
+        <p>Created by: ${user.username}</p>
         <p>Size: ${prod.size}</p>
         <p>Price: ${prod.price}</p>
         <p>quantity: ${prod.quantity}</p>
