@@ -10,9 +10,6 @@ document.addEventListener('DOMContentLoaded', event => {
         form.hidden = false;
         return form;
     }
-
-    let personalizeLink = document.getElementById('personalize-link');
-
     
     const images = document.getElementsByClassName('jewelry-img')
     for (i = 0; i < images.length; i++) {
