@@ -19,7 +19,7 @@ class User {
         submitUserBtn.addEventListener('click', e => {
             e.preventDefault;
             let formData = {
-                username: document.querySelector('input').value
+                username: document.getElementById('username').value
             }
             UserApi.createUsers(formData)
         })
