@@ -20,7 +20,7 @@ class User {
                 username: document.getElementById('username').value
             }
             UserApi.createUsers(formData);
-            e.target.parentElement.reset();
+            e.target.reset();
     }
 
     static findByName(username) {

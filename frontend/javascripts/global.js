@@ -1,5 +1,5 @@
 const submitButton = document.querySelector("form#jewelry-form");
-const submitUserBtn = document.querySelector("input#submit-user");
+const submitUserBtn = document.querySelector("form#username-form");
 const nameInput = document.querySelector('input#jewelry-product-name');
 const fontInput = document.querySelector('input#jewelry-product-font');
 const metalInput = document.querySelector('input#jewelry-product-metal');
