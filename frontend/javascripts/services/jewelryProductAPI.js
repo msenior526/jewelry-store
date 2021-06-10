@@ -22,15 +22,15 @@ class JewelryProductApi {
             },
             body: JSON.stringify(data)
           })
-          // .then(resp => resp.json())
-          // .then(json => {
+          .then(resp => resp.json())
+          .then(json => {
           //   // for (const property in json) {
           //   //   alert(`${property} ${json[property]}`)
           //   // }
-          //   let newJewels = new JewelryProduct(json);
+            let newJewels = new JewelryProduct(json);
           //   // debugger
-          //     JewelryProduct.display(newJewels);
-          // })
+              JewelryProduct.display(newJewels);
+          })
           .catch(err => alert(err));
     }
 }

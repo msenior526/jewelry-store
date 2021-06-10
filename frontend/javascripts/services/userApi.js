@@ -23,7 +23,6 @@ class UserApi {
         .then(resp => resp.json())
         .then(json => {
             let user = new User(json);
-            debugger
             user.display();
         })
         // Add error message if name is taken
