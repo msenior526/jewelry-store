@@ -54,4 +54,20 @@ a#title {
     white-space: nowrap;
     text-decoration: none;
 }
+
+ul#jewelry-list li {
+    display: inline-block;
+}
+
+ul div.product {
+    border-radius: 25px;
+    padding: 20px;
+    text-align: center;
+    border: groove;
+    display: inline-block;
+}
+
+::marker {
+    color: white;
+}
   

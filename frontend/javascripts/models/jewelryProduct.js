@@ -43,7 +43,7 @@ class JewelryProduct {
         let user = User.findById(prod.userId);
         let listItem = document.createElement('li')
         listItem.innerHTML = `
-        <div id='product'>
+        <div class='product'>
         <h3>${prod.name}</h3>
         <p>Created by: ${user.username}</p>
         <p>Size: ${prod.size}</p>
