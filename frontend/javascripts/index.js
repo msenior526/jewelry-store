@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', event => {
     .then(UserApi.fetchUsers)
     .then(JewelryProductApi.fetchProducts)
    
-    User.handleSubmit();
+    // User.handleSubmit();
     JewelryProduct.handleSubmit();
    
+    submitUserBtn.addEventListener('click', User.handleSubmit)
+
     const renderJewelryForm = () => {
         jewelryForm().hidden = false;
         return form;

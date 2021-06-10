@@ -4,9 +4,7 @@ class UserApi {
         .then(resp => resp.json())
         .then(json => {
             json.data.forEach(user => {
-                const products = user.attributes.jewelry_product_ids
-                const {id, username} = user.attributes;
-                const newUser = new User(id, username, products);
+                const newUser = new User(user.attributes);
                 return newUser.display();
             })
         })
@@ -14,8 +12,6 @@ class UserApi {
     }
 
     static createUsers(data) {
-        debugger
-        // PAGE RELOADS HERE. WHY?
         return fetch('http://localhost:3000/users', {
             method: 'POST', 
             headers: {
@@ -23,6 +19,12 @@ class UserApi {
                 "Accept": "application/json"
             },
             body: JSON.stringify(data)
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            let user = new User(json);
+            debugger
+            user.display();
         })
         // Add error message if name is taken
         .catch(err => console.log(err))

@@ -1,9 +1,8 @@
 class User {
     static all = [];
-    constructor(id, username, products = []) {
+    constructor({id, username}) {
         this.id = id, 
         this.username = username,
-        this.products = products
         User.all.push(this)
     }
 
@@ -15,15 +14,14 @@ class User {
         return userList.appendChild(listItem);
     }
 
-    static handleSubmit() {
-        submitUserBtn.addEventListener('click', event => {
-            debugger
-            event.preventDefault;
+    static handleSubmit(e) {
+            e.preventDefault();
             let formData = {
                 username: document.getElementById('username').value
             }
-            return UserApi.createUsers(formData);
-        })
+            UserApi.createUsers(formData);
+            e.target.parentElement.reset();
+
     }
 
     static findByName(username) {
