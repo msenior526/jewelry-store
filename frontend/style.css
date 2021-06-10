@@ -20,3 +20,15 @@
 div.align-center {
     margin: 0px auto;
 }
+
+.jewelry-form {
+    /* display: none; */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 30%;
+    overflow: auto;
+    background-color: chartreuse;
+}
