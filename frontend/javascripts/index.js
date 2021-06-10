@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', event => {
     submitUserBtn.addEventListener('click', User.handleSubmit)
     submitButton.addEventListener('click', JewelryProduct.handleSubmit)
     
+    xButton.addEventListener('click', event => {
+        jewelryForm().hidden = true;
+    })
+    
     const renderJewelryForm = () => {
         jewelryForm().hidden = false;
     }

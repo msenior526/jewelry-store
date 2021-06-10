@@ -10,3 +10,4 @@ const usernameInput = document.getElementById('username-input')
 const jewelryForm = () => document.querySelector('form#jewelry-form');
 const jewelryList = document.getElementById('jewelry-list');
 const userList = document.getElementById('user-list');
+const xButton = document.querySelector('span');
