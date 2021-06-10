@@ -40,10 +40,10 @@ class JewelryProduct {
 
 
     static display = (prod) => {
+        let user = User.findById(prod.userId);
         let listItem = document.createElement('li')
-        // debugger
-        let user = User.findById(prod.userId)
         listItem.innerHTML = `
+        <div id='product'>
         <h3>${prod.name}</h3>
         <p>Created by: ${user.username}</p>
         <p>Size: ${prod.size}</p>
@@ -51,6 +51,7 @@ class JewelryProduct {
         <p>quantity: ${prod.quantity}</p>
         <p>metal_type: ${prod.metalType}</p>
         <p>jewelry_type: ${prod.jewelryType}</p>
+        </div>
         `
         return jewelryList.appendChild(listItem);
    }
