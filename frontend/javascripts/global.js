@@ -1,4 +1,4 @@
-const submitButton = document.querySelector("input[value='Add To Cart']");
+const submitButton = document.querySelector("form#jewelry-form");
 const submitUserBtn = document.querySelector("input#submit-user");
 const nameInput = document.querySelector('input#jewelry-product-name');
 const fontInput = document.querySelector('input#jewelry-product-font');

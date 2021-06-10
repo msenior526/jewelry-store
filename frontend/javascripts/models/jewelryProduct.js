@@ -30,7 +30,7 @@ class JewelryProduct {
                 jewelry_type: typeInput.value,
             }
             JewelryProductApi.createProducts(formData);
-            jewelryForm().reset();
+            e.target.reset();
     }
 
     static findById(id) {

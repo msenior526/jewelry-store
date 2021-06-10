@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', event => {
     .then(UserApi.fetchUsers)
     .then(JewelryProductApi.fetchProducts)
    
-    submitUserBtn.addEventListener('click', User.handleSubmit)
-    submitButton.addEventListener('click', JewelryProduct.handleSubmit)
+    submitUserBtn.addEventListener('submit', User.handleSubmit)
+    submitButton.addEventListener('submit', JewelryProduct.handleSubmit)
     
     xButton.addEventListener('click', event => {
         jewelryForm().style.display = 'none';
