@@ -17,9 +17,8 @@ class JewelryProduct {
         return User.findById(this.userId).username
     }
 
-    static handleSubmit = () => {
-        submitButton.addEventListener('click', event => {
-            event.preventDefault();
+    static handleSubmit(e) {
+            e.preventDefault();
             const user = User.findByName(`${usernameInput.value}`)
             let formData = {
                 name: nameInput.value,
@@ -31,9 +30,7 @@ class JewelryProduct {
                 jewelry_type: typeInput.value,
             }
             JewelryProductApi.createProducts(formData);
-            return jewelryForm().hidden = true;
-
-        })
+            jewelryForm().reset();
     }
 
     static findById(id) {

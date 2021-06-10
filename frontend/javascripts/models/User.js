@@ -21,7 +21,6 @@ class User {
             }
             UserApi.createUsers(formData);
             e.target.parentElement.reset();
-
     }
 
     static findByName(username) {

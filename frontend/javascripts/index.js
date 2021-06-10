@@ -8,14 +8,11 @@ document.addEventListener('DOMContentLoaded', event => {
     .then(UserApi.fetchUsers)
     .then(JewelryProductApi.fetchProducts)
    
-    // User.handleSubmit();
-    JewelryProduct.handleSubmit();
-   
     submitUserBtn.addEventListener('click', User.handleSubmit)
-
+    submitButton.addEventListener('click', JewelryProduct.handleSubmit)
+    
     const renderJewelryForm = () => {
         jewelryForm().hidden = false;
-        return form;
     }
     
     const images = document.getElementsByClassName('jewelry-img')
