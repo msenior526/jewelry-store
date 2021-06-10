@@ -51,6 +51,7 @@ class JewelryProduct {
         <p>quantity: ${prod.quantity}</p>
         <p>metal_type: ${prod.metalType}</p>
         <p>jewelry_type: ${prod.jewelryType}</p>
+        <button class='add-to-cart'> Add To Cart</button>
         </div>
         `
         return jewelryList.appendChild(listItem);
