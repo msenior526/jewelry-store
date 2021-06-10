@@ -12,18 +12,16 @@ document.addEventListener('DOMContentLoaded', event => {
     submitButton.addEventListener('click', JewelryProduct.handleSubmit)
     
     xButton.addEventListener('click', event => {
-        jewelryForm().hidden = true;
+        jewelryForm().style.display = 'none';
     })
     
     const renderJewelryForm = () => {
-        jewelryForm().hidden = false;
+        jewelryForm().style.display = 'block';
     }
     
     const images = document.getElementsByClassName('jewelry-img')
     for (i = 0; i < images.length; i++) {
-        images[i].addEventListener('click', e => { 
-            return renderJewelryForm();
-        })
+        images[i].addEventListener('click', renderJewelryForm)
     }
 })
         
