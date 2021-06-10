@@ -14,60 +14,60 @@
         <a href='#user-list'>Users</a>
     </nav>
     
-    
-    <div class="jewelry-images">
-        <div class="jewelry-img">
-            <img src="images/silver-ring.jpg" alt="Personalized silver ring with name Ashley" >
+    <div id='main'>
+        <div class="jewelry-images">
+            <div class="jewelry-img">
+                <img src="images/silver-ring.jpg" alt="Personalized silver ring with name Ashley" >
+            </div>
+            <div class="jewelry-img">
+                <img src="images/rose-gold-necklace.jpg" alt="Personalized rose gold necklace with name Ashley" >
+            </div>
+            <div class="jewelry-img">
+                <img src="images/gold-bracelet.jpeg" alt="Personalized gold bracelet with name Ashley" >
+            </div>
         </div>
-        <div class="jewelry-img">
-            <img src="images/rose-gold-necklace.jpg" alt="Personalized rose gold necklace with name Ashley" >
+        <div class="jewelry-form">
+            <form id='jewelry-form' hidden>
+                <h4>Form for Custom Jewelry</h4>
+                <span class="close">&times</span>
+                
+                <label for='jewelry-product-name'>Name:</label>
+                <input type='text'name='name'id="jewelry-product-name" placeholder="Custom Name"><br>
+                
+                <label for='jewelry-product-font'>Font:</label>
+                <input type='text'name='font_family'id='jewelry-product-font'><br>
+                
+                <label for='jewelry-product-metal'>Metal:</label>
+                <input type='text'name='metal_type'id='jewelry-product-metal'><br>
+                
+                <label for='jewelry-product-size'>Size:</label>
+                <input type='text'name='size'id='jewelry-product-size'><br>
+                
+                <label for='jewelry-product-quantity'>Quantity:</label>
+                <input type='number' name='quantity' id='jewelry-product-quantity'><br>
+                
+                <label for='jewelry-product-type'>Type:</label>
+                <input type='text'name='jewelry_type'id='jewelry-product-type'><br>
+                
+                <label for='user-id'>Username: </label>
+                <input type='text'name='user_id'id='username-input'><br>
+                
+                <input type='submit' value="Add To Cart">
+            </form>
         </div>
-        <div class="jewelry-img">
-            <img src="images/gold-bracelet.jpeg" alt="Personalized gold bracelet with name Ashley" >
+        <ul id='jewelry-list'>
+            
+        </ul>
+        <div>
+            <form id='username-form'>
+                <input type='text' name="username" placeholder="Username" id="username">
+                <input type='submit' value="Submit" id='submit-user'>
+            </form>
         </div>
+        <ul id='user-list'>
+            
+        </ul>
     </div>
-    <div class="jewelry-form">
-        <form id='jewelry-form' hidden>
-            <h4>Form for Custom Jewelry</h4>
-            <span class="close">&times</span>
-            
-            <label for='jewelry-product-name'>Name:</label>
-            <input type='text'name='name'id="jewelry-product-name" placeholder="Custom Name"><br>
-            
-            <label for='jewelry-product-font'>Font:</label>
-            <input type='text'name='font_family'id='jewelry-product-font'><br>
-            
-            <label for='jewelry-product-metal'>Metal:</label>
-            <input type='text'name='metal_type'id='jewelry-product-metal'><br>
-            
-            <label for='jewelry-product-size'>Size:</label>
-            <input type='text'name='size'id='jewelry-product-size'><br>
-            
-            <label for='jewelry-product-quantity'>Quantity:</label>
-            <input type='number' name='quantity' id='jewelry-product-quantity'><br>
-            
-            <label for='jewelry-product-type'>Type:</label>
-            <input type='text'name='jewelry_type'id='jewelry-product-type'><br>
-            
-            <label for='user-id'>Username: </label>
-            <input type='text'name='user_id'id='username-input'><br>
-            
-            <input type='submit' value="Add To Cart">
-        </form>
-    </div>
-    <ul id='jewelry-list'>
-        
-    </ul>
-    <div>
-        <form id='username-form'>
-            <input type='text' name="username" placeholder="Username" id="username">
-            <input type='submit' value="Submit" id='submit-user'>
-        </form>
-    </div>
-    <ul id='user-list'>
-        
-    </ul>
-    
     
     <script src='javascripts/global.js'></script>
     <script src='javascripts/services/userApi.js'></script>
