@@ -24,11 +24,22 @@ div.align-center {
 .jewelry-form {
     display: none;
     position: fixed;
+    margin-top: 20px;
+    border-radius: 25px;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
-    height: 70%;
+    height: 50%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
+}
+
+#jewelry-form {
+    background-color: white;
+    text-align: center;
+}
+
+input {
+    margin-top: 12px;
 }
