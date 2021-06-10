@@ -2,3 +2,10 @@ img.jewelry-img {
     display: inline-block;
     width: 400px;
 }
+
+.navbar {
+    background-color: rgb(47, 204, 139);
+    position: fixed;
+    top: 0;
+    width: 120%;
+}
