@@ -78,3 +78,6 @@ ul div.product {
     color: white;
 }
   
+div#main {
+    display: none;
+}
