@@ -59,7 +59,12 @@ ul#jewelry-list li {
     display: inline-block;
     padding-left: 20px;
     padding-bottom: 20px;
-    text-align: center;
+}
+
+ul#jewelry-list {
+    width: 95%;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
 }
 
 ul div.product {

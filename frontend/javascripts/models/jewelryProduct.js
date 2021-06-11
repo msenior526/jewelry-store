@@ -43,7 +43,7 @@ class JewelryProduct {
         let user = User.findById(prod.userId);
         let listItem = document.createElement('li')
         listItem.innerHTML = `
-        <div class='product'>
+        <div class='product' id='prod-${prod.id}'>
         <h3>${prod.name}</h3>
         <p>Created by: ${user.username}</p>
         <p>Size: ${prod.size}</p>
@@ -54,6 +54,7 @@ class JewelryProduct {
         <button class='add-to-cart'> Add To Cart</button>
         </div>
         `
-        return jewelryList.appendChild(listItem);
+        jewelryList.appendChild(listItem);
+        document.querySelector(`div#prod-${prod.id} button.add-to-cart`).addEventListener('click', (e) => Cart.addItemToCart(prod, e))
    }
 }

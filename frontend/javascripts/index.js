@@ -19,8 +19,7 @@ document.addEventListener('DOMContentLoaded', event => {
         jewelryForm().style.display = 'block';
     }
     
-    const images = document.getElementsByClassName('jewelry-img')
-    for (i = 0; i < images.length; i++) {
+    for (let i = 0; i < images.length; i++) {
         images[i].addEventListener('click', renderJewelryForm)
     }
 })

@@ -11,4 +11,5 @@ const jewelryForm = () => document.querySelector('div.jewelry-form');
 const jewelryList = document.getElementById('jewelry-list');
 const userList = document.getElementById('user-list');
 const xButton = document.querySelector('span');
-let addToCartBtns = () => document.getElementsByClassName('add-to-cart');
+const addToCartBtn = () => document.querySelector('button.add-to-cart');
+const images = document.getElementsByClassName('jewelry-img');
