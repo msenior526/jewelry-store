@@ -17,7 +17,8 @@ class User {
     static handleSubmit(e) {
             e.preventDefault();
             let formData = {
-                username: document.getElementById('username').value
+                username: document.getElementById('username').value,
+                password: passwordInput
             }
             UserApi.createUsers(formData);
             e.target.reset();
@@ -29,13 +30,5 @@ class User {
 
     static findById(id) {
         return this.all.find(user => user.id === id)
-    }
-
-    static handleLogin() {
-        let data = {
-            username: usernameInput,
-            password: passwordInput
-        }
-        return data;
     }
 }

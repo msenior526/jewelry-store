@@ -16,10 +16,11 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.find_or_create_by(user_params)
-
+    
     if @user.valid?
       render json: @user, status: :created, location: @user
     else
+      byebug
       render json: @user.errors, status: :unprocessable_entity
     end
   end
