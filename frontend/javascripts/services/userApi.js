@@ -22,7 +22,9 @@ class UserApi {
         })
         .then(resp => resp.json())
         .then(json => {
+            debugger
             let user = new User(json);
+            // Create user cart here
             user.display();
         })
         // Add error message if name is taken
