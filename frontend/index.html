@@ -14,8 +14,22 @@
         <a href='#user-list'>Users</a>
         <a href='#jewelry-list'>Products</a>
     </nav>
-    
-    <div id='main'>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2>ENTER A USERNAME AND PASSWORD TO START SHOPPING</h2>
+    <div hidden>
+        <form id='username-form'>
+            <label for="username">Username</label>
+            <input type='text' name="username" placeholder="Username" id="username">
+            <label for="password">Password</label>
+            <input type='password' name="password" placeholder="Password" id="password">
+            <input type='submit' value="Submit" id='submit-user'>
+        </form>
+    </div>
+        <div id='main' hidden>
         <div class="jewelry-images">
             <div class="jewelry-img">
                 <img src="images/silver-ring.jpg" alt="Personalized silver ring with name Ashley" >
@@ -59,12 +73,7 @@
         <ul id='jewelry-list'>
             
         </ul>
-        <div>
-            <form id='username-form'>
-                <input type='text' name="username" placeholder="Username" id="username">
-                <input type='submit' value="Submit" id='submit-user'>
-            </form>
-        </div>
+      
         <ul id='user-list'>
             
         </ul>
