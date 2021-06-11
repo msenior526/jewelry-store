@@ -83,5 +83,6 @@ div#main {
 }
 
 div#login-signup {
+    display: block;
     text-align: center;
 }
