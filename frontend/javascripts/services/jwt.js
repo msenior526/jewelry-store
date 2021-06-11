@@ -6,7 +6,7 @@ var app = express();
 
 // Register the home route that displays a welcome message
 // This route can be accessed without a token
-app.get('/', function(req, res){
+app.get('http://localhost:3000', function(req, res){
   res.send("Welcome to our API");
 })
 

@@ -13,3 +13,4 @@ const userList = document.getElementById('user-list');
 const xButton = document.querySelector('span');
 const addToCartBtn = () => document.querySelector('button.add-to-cart');
 const images = document.getElementsByClassName('jewelry-img');
+const passwordInput = document.getElementById('password');
