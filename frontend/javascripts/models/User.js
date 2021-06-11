@@ -22,6 +22,7 @@ class User {
             }
             UserApi.createUsers(formData);
             e.target.reset();
+            mainDiv.style.display = "block"
     }
 
     static findByName(username) {
