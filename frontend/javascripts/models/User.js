@@ -30,4 +30,12 @@ class User {
     static findById(id) {
         return this.all.find(user => user.id === id)
     }
+
+    static handleLogin() {
+        let data = {
+            username: usernameInput,
+            password: passwordInput
+        }
+        return data;
+    }
 }
