@@ -3,7 +3,7 @@ var express = require('express');
 var jwt = require('jsonwebtoken');
 
 var app = express();
-debugger
+
 // Register the home route that displays a welcome message
 // This route can be accessed without a token
 app.get('/', function(req, res){
