@@ -15,3 +15,4 @@ const addToCartBtn = () => document.querySelector('button.add-to-cart');
 const images = document.getElementsByClassName('jewelry-img');
 const passwordInput = document.getElementById('password');
 const mainDiv = document.getElementById('main');
+const enterSpaDiv = document.getElementById('login-signup')
