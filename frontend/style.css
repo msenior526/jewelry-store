@@ -86,3 +86,7 @@ div#login-signup {
     display: block;
     text-align: center;
 }
+
+img#cart {
+    max-width: 3%;
+} 
