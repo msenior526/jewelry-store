@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     if @user.valid?
       render json: @user, status: :created, location: @user
     else
-      byebug
       render json: @user.errors, status: :unprocessable_entity
     end
   end
