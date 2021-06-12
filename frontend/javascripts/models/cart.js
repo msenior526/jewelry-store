@@ -17,9 +17,8 @@ class Cart {
     }
 
     calculatePrice() {
-        this.products.reduce(prod => {
-            debugger
-            return start += prod.price;
-        })
+        return this.products.reduce((total, prod) => {
+            return total += prod.price;
+        }, 0)
     }
 }
