@@ -19,10 +19,10 @@ class JewelryProduct {
 
     static handleSubmit(e) {
             e.preventDefault();
-            const user = User.findByName(`${usernameInput.value}`)
+            const user = User.currentUserId;
             let formData = {
                 name: nameInput.value,
-                user_id: user.id,
+                user_id: user,
                 quantity: quantityInput.value,
                 size: sizeInput.value,
                 metal_type: metalInput.value,
