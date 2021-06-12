@@ -23,11 +23,12 @@ class UserApi {
         .then(resp => resp.json())
         .then(json => {
             let user = new User(json);
-            let newCart = new Cart(user.id)
-            debugger
+            User.currentUserId = user.id;
+            new Cart(user.id)
+
             // user.display();
         })
-        // Add error message if name is taken
+        // error message?
         .catch(err => console.log(err))
     }
 }

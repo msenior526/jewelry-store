@@ -1,5 +1,7 @@
 class User {
     static all = [];
+    static currentUserId = null;
+    
     constructor({id, username}) {
         this.id = id, 
         this.username = username,
@@ -23,6 +25,7 @@ class User {
             UserApi.createUsers(formData);
             e.target.reset();
             mainDiv.style.display = "block"
+            enterSpaDiv.style.display = 'none'
     }
 
     static findByName(username) {
