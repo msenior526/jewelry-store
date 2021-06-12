@@ -21,4 +21,8 @@ class Cart {
             return total += prod.price;
         }, 0)
     }
+
+    static display() {
+        debugger
+    }
 }
