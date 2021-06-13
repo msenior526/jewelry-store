@@ -23,6 +23,7 @@ class Cart {
     }
 
     static display() {
-        debugger
+        const cart = Cart.findByUserId(User.currentUserId);
+        // debugger
     }
 }

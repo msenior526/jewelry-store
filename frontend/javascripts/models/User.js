@@ -19,8 +19,8 @@ class User {
     static handleSubmit(e) {
             e.preventDefault();
             let formData = {
-                username: document.getElementById('username').value,
-                password: passwordInput
+                username: document.getElementById('user-username').value,
+                password: passwordInput.value
             }
             UserApi.createUsers(formData);
             e.target.reset();

@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', event => {
    
     submitUserBtn.addEventListener('submit', User.handleSubmit)
     submitButton.addEventListener('submit', JewelryProduct.handleSubmit)
+    cartImg.addEventListener('click', Cart.display)
     
     xButton.addEventListener('click', event => {
         jewelryForm().style.display = 'none';
