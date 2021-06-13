@@ -38,10 +38,10 @@ div.align-center {
     margin: 0px auto;
 }
 
-.jewelry-form {
+div.jewelry-form {
     display: none;
     position: fixed;
-    margin-top: 20px;
+    margin-top: 70px;
     border-radius: 25px;
     z-index: 1;
     left: 0;
@@ -52,7 +52,12 @@ div.align-center {
     background-color: rgba(0,0,0,0.4);
 }
 
-#jewelry-form {
+span {
+    display: inline-block;
+}
+
+form#jewelry-form {
+    margin-top: 30px;
     background-color: white;
     text-align: center;
 }
@@ -99,7 +104,8 @@ div#login-signup {
 
 img#cart-img {
     max-width: 3%;
-    margin:50px ;
+    margin: 25px;
+    margin-right: 40px;
     float: right;
     top:-40px;
 } 
