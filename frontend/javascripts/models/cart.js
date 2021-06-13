@@ -24,6 +24,6 @@ class Cart {
 
     static display() {
         const cart = Cart.findByUserId(User.currentUserId);
-        // debugger
+        debugger
     }
 }

@@ -40,8 +40,7 @@ input {
 
 ul#jewelry-list li {
     display: inline-block;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    padding: 30px;
 }
 
 ul#jewelry-list {
@@ -72,7 +71,7 @@ div#login-signup {
     text-align: center;
 }
 
-img#cart {
+img#cart-img {
     max-width: 3%;
     margin:50px ;
     float: right;

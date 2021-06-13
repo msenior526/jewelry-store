@@ -16,4 +16,4 @@ const images = document.getElementsByClassName('jewelry-img');
 const passwordInput = document.getElementById('user-password');
 const mainDiv = document.getElementById('main');
 const enterSpaDiv = document.getElementById('login-signup');
-const cartImg = document.getElementById('cart');
+const cartImg = document.getElementById('cart-img');
