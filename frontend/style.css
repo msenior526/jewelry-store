@@ -5,13 +5,6 @@
    padding-left: 40px;
 }
 
-.navbar {
-    background-color: rgb(47, 204, 139);
-    position: fixed;
-    top: 0;
-    width: 120%;
-}
-
 .jewelry-images .jewelry-img{
     margin-top: 100px;
     display: inline-block;
@@ -44,17 +37,6 @@ input {
     margin-top: 12px;
 }
 
-a#title {
-    display: inline-block;
-    padding-top: 0.3125rem;
-    padding-bottom: 0.3125rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
-    line-height: inherit;
-    white-space: nowrap;
-    text-decoration: none;
-}
-
 ul#jewelry-list li {
     display: inline-block;
     padding-left: 20px;
@@ -77,9 +59,9 @@ ul div.product {
 ::marker {
     color: white;
 }
-  
+
 div#main {
-    display: none;
+    /* display: none; */
 }
 
 div#login-signup {
@@ -89,4 +71,66 @@ div#login-signup {
 
 img#cart {
     max-width: 3%;
+    margin:50px ;
+    float: right;
+    top:-40px;
 } 
+
+/* .nav-element {
+    padding-left: 20px;
+} */
+
+.navbar .nav > li > a {
+    float: none;
+    padding: 10px 15px 10px;
+    color: #940909;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #ffffff;
+}
+
+.navbar {
+    background: rgb(47, 204, 139);
+    position: fixed;
+    z-index: 1;
+    margin-bottom: 10px;
+    top: 0;
+    width: 100%;
+}
+
+/* .nav {
+    margin-bottom: 10px;
+    margin-left: 0;
+    list-style: none;
+} */
+
+/* .nav > li > a {
+    padding-top: 04%;
+    display: inline;
+} */
+
+.navbar .nav {
+    position: relative;
+    left: 0;
+    display: block;
+    float: left;
+    margin: 0 10px -20px 0;
+}
+
+.navbar .nav > li {
+    display: inline-block;
+    text-align: center;
+    margin-top: 45px;
+    border-radius: 80px;
+}
+.navbar .brand {
+    display: block;
+    float: left;
+    padding: 10px 20px 10px;
+    margin-left: -20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #777777;
+    text-shadow: 0 1px 0 #ffffff;
+    white-space: nowrap;
+    text-decoration: none;
+}
