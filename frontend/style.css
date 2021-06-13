@@ -7,7 +7,7 @@
 }
 
 .jewelry-images .jewelry-img{
-    margin-top: 100px;
+    margin-top: 150px;
     display: inline-block;
 }
 
@@ -100,6 +100,11 @@ img#cart-img {
     margin-bottom: 10px;
     top: 0;
     width: 100%;
+}
+
+.top {
+    margin-left: -8px;
+    background-color: rgb(47, 204, 139);;
 }
 
 /* .nav {
