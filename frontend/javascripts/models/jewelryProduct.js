@@ -44,7 +44,7 @@ class JewelryProduct {
         let listItem = document.createElement('li')
         listItem.innerHTML = `
         <div class='product' id='prod-${prod.id}'>
-        <h3>${prod.name}</h3>
+        <h4>${prod.name}</h3>
         <p>Created by: ${user.username}</p>
         <p>Size: ${prod.size}</p>
         <p>Price: ${prod.price}</p>

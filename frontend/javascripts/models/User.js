@@ -11,7 +11,7 @@ class User {
     display() {
         let listItem = document.createElement('li')
         listItem.innerHTML = `
-        <h3>${this.username}</h3>
+        <h4>${this.username}</h3>
         `
         return userList.appendChild(listItem);
     }
