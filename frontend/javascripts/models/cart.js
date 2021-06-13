@@ -25,22 +25,23 @@ class Cart {
     static display() {
         // const cartId = Cart.findByUserId(User.currentUserId);
         const cart =  document.getElementById('cart');
+        alert('this is your shopping cart')
         // debugger
-        if ((cartId.products.length === 0) || (cartId.products == undefined)) {
-            cart.innerText = "You have no products i nyour csrt. Start shopping now."
-        } else {
-            cartId.products.forEach(item => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    <p>${item.name}</p>
-                    <p>${item.jewelryType}</p>
-                    <p>${item.metalType}</p>
-                    <p>${item.size}</p>
-                    <p>Subtotal${cartId.calculatePrice()}</p>
-                `
-                return cart.appendChild(li);
-            })
-        }
+        // if ((cartId.products.length === 0) || (cartId.products == undefined)) {
+        //     cart.innerText = "You have no products i nyour csrt. Start shopping now."
+        // } else {
+        //     cartId.products.forEach(item => {
+        //         const li = document.createElement('li');
+        //         li.innerHTML = `
+        //             <p>${item.name}</p>
+        //             <p>${item.jewelryType}</p>
+        //             <p>${item.metalType}</p>
+        //             <p>${item.size}</p>
+        //             <p>Subtotal${cartId.calculatePrice()}</p>
+        //         `
+        //         return cart.appendChild(li);
+        //     })
+        // }
 
     }
 }
