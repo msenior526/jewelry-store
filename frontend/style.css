@@ -26,8 +26,8 @@
   100% { font-size: larger;}
 }
 
- h3 {
-     padding: 20px;
+h3 {
+    padding: 20px;
     animation-duration: 2s;
     animation-name: element;
     animation-iteration-count: infinite;
