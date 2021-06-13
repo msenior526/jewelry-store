@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.find_or_create_by(user_params)
-    
+    byebug
     if @user.valid?
       render json: @user, status: :created, location: @user
     else
