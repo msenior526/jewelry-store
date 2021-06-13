@@ -1,19 +1,38 @@
 .jewelry-img img {
    width: 300px;
-   display: inline-block;
+   /* display: inline-block; */
    padding-right: 40px;
    padding-left: 76px;
    padding-bottom: 150px;
 }
 
 .jewelry-images .jewelry-img{
-    margin-top: 150px;
+    /* margin-top: 150px; */
     display: inline-block;
 }
 
-/* .jewelry-images {
-    height: 90px;
-} */
+#ring-img {
+    height: 75%;
+    margin-top: 20px;
+}
+
+.jewelry-images {
+  margin-top: 50px;
+  text-align: center;
+}
+
+@keyframes element {
+    0% { font-size: smaller; }
+  100% { font-size: larger;}
+}
+
+ h3 {
+     padding: 20px;
+    animation-duration: 2s;
+    animation-name: element;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
 
 div.align-center {
     margin: 0px auto;
