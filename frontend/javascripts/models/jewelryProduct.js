@@ -48,13 +48,29 @@ class JewelryProduct {
         <p>Created by: ${user.username}</p>
         <p>Size: ${prod.size}</p>
         <p>Price: ${prod.price}</p>
-        <p>quantity: ${prod.quantity}</p>
-        <p>metal_type: ${prod.metalType}</p>
-        <p>jewelry_type: ${prod.jewelryType}</p>
+        <p>Metal Type: ${prod.metalType}</p>
+        <p>Jewelry Type: ${prod.jewelryType}</p>
         <button class='add-to-cart'> Add To Cart</button>
         </div>
         `
         jewelryList.appendChild(listItem);
+            
+        let div = document.querySelector(`div#prod-${prod.id}`)
+        switch(prod.jewelryType) {
+            case "necklace":
+                div.style.backgroundImage = "url('images/rose-gold-necklace.jpg')";
+              break;
+            case "ring":
+                div.style.backgroundImage = "url('images/silver-ring.jpg')";
+                break;
+                case "bracelet":
+                    div.style.backgroundImage = "url('images/gold-bracelet.jpeg')";
+                    // debugger
+              break;
+            default:
+                div.style.backgroundImage = "url('images/rose-gold-necklace.jpg')";
+          }
+
         document.querySelector(`div#prod-${prod.id} button.add-to-cart`).addEventListener('click', (e) => Cart.addItemToCart(prod, e))
    }
 }

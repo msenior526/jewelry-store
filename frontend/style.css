@@ -2,7 +2,8 @@
    width: 300px;
    display: inline-block;
    padding-right: 40px;
-   padding-left: 40px;
+   padding-left: 76px;
+   padding-bottom: 150px;
 }
 
 .jewelry-images .jewelry-img{
@@ -54,15 +55,17 @@ ul div.product {
     width: 300px;
     text-align: center;
     border: groove;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
 }
 
 ::marker {
     color: white;
 }
 
-div#main {
+/* div#main {
     /* display: none; */
-}
+/* }  */
 
 div#login-signup {
     display: block;
@@ -133,4 +136,8 @@ img#cart {
     text-shadow: 0 1px 0 #ffffff;
     white-space: nowrap;
     text-decoration: none;
+}
+
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
