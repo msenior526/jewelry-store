@@ -10,7 +10,7 @@ const usernameInput = document.getElementById('username-input')
 const jewelryForm = () => document.querySelector('div.jewelry-form');
 const jewelryList = document.getElementById('jewelry-list');
 const userList = document.getElementById('user-list');
-const xButton = document.querySelector('span');
+const xButton = document.querySelector('div.close');
 const addToCartBtn = () => document.querySelector('button.add-to-cart');
 const images = document.getElementsByClassName('jewelry-img');
 const passwordInput = document.getElementById('user-password');
