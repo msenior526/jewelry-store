@@ -64,7 +64,6 @@ class JewelryProduct {
                 break;
                 case "bracelet":
                     div.style.backgroundImage = "url('images/gold-bracelet.jpeg')";
-                    // debugger
               break;
             default:
                 div.style.backgroundImage = "url('images/rose-gold-necklace.jpg')";

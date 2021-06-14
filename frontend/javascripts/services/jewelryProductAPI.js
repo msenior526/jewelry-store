@@ -4,9 +4,7 @@ class JewelryProductApi {
         .then(resp => resp.json())
         .then(json => {
                 return json.data.forEach((product) => {
-                    // let user =  User.findById(userId);
                     let jewelry = new JewelryProduct(product.attributes);
-                    // debugger
                     JewelryProduct.display(jewelry);
             });
         })
@@ -28,7 +26,6 @@ class JewelryProductApi {
           //   //   alert(`${property} ${json[property]}`)
           //   // }
             let newJewels = new JewelryProduct(json);
-          //   // debugger
               JewelryProduct.display(newJewels);
           })
           .catch(err => alert(err));
