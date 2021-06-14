@@ -1,10 +1,9 @@
 class JewelryProduct {
     static all = []
-    constructor({id, name,  price, quantity, size, jewelry_type, metal_type, font_family, user_id}) {
+    constructor({id, name,  price, size, jewelry_type, metal_type, font_family, user_id}) {
         this.id = id,
         this.name = name,
         this.price = price,
-        this.quantity = quantity,
         this.size = size,
         this.jewelryType = jewelry_type,
         this.metalType = metal_type,

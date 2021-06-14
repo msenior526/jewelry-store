@@ -63,10 +63,11 @@ class Cart {
             user_id: thisCart.userId
         }
         CartApi.createCart(data);
+        // OR JewelryProduct.updateProduct(data);
     }
 
     static removeFromCart(prod, e) {
         e.preventDefault();
-        thisCart.products.splice(prod);
+        e.target.parentElement
     }
 }
