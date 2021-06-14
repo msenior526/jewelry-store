@@ -33,15 +33,21 @@ class Cart {
         // } else {
         //     cartId.products.forEach(item => {
         //         const li = document.createElement('li');
+        //         const removeButton = document.createElement('button');
+        //         removeButton.innerText = 'Remove'
         //         li.innerHTML = `
         //             <p>${item.name}</p>
         //             <p>${item.jewelryType}</p>
         //             <p>${item.metalType}</p>
         //             <p>${item.size}</p>
-        //             <p>Subtotal${cartId.calculatePrice()}</p>
+        //             ${removeButton}
         //         `
+        //         
+        //         
         //         cart.appendChild(li);
+        //         removeButton.addEventListener('click', Cart.removeFromCart)
         //     })
+        //      <p>Subtotal${cartId.calculatePrice()}</p>
         //      let button = document.createElement('button');
         //      button.id = 'checkout';
         //      button.innerText = 'Checkout';
