@@ -45,7 +45,7 @@ class Cart {
         //         
         //         
         //         cart.appendChild(li);
-        //         removeButton.addEventListener('click', Cart.removeFromCart)
+        //         removeButton.addEventListener('click', Cart.removeFromCart(prod, e))
         //     })
         //      <p>Subtotal${cartId.calculatePrice()}</p>
         //      let button = document.createElement('button');
@@ -63,5 +63,10 @@ class Cart {
             user_id: thisCart.userId
         }
         CartApi.createCart(data);
+    }
+
+    static removeFromCart(prod, e) {
+        e.preventDefault();
+        thisCart.products.splice(prod);
     }
 }
