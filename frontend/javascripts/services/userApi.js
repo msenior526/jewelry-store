@@ -22,7 +22,7 @@ class UserApi {
         })
         .then(resp => resp.json())
         .then(json => {
-            let user = new User(json);
+            let user = new User(json.data.attributes);
             User.currentUserId = user.id;
             new Cart(user.id)
 

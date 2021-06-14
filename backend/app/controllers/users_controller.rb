@@ -15,10 +15,12 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.find_or_create_by(user_params)
-    byebug
+    @user = User.find_or_create_by(username: params['username']) do |user|
+      user.password = params['password']
+    end
     if @user.valid?
-      render json: @user, status: :created, location: @user
+      render json: UserSerializer.new(@user)
+      # , status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end

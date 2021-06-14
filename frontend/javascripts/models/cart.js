@@ -7,10 +7,9 @@ class Cart {
     }
 
     static addItemToCart(item) {
-        alert(`${item.name} ${item.jewelryType} was added to your cart`)
-        // const cart = Cart.findByUserId(User.currentUserId);
-        // cart.products.push(item);
-        // console.log(cart.products);
+        const cart = Cart.findByUserId(User.currentUserId);
+        cart.products.push(item);
+        console.log(cart.products);
     }
 
     static findByUserId(id) {
@@ -24,36 +23,32 @@ class Cart {
     }
 
     static display() {
-        // const cartId = Cart.findByUserId(User.currentUserId);
+        const cartId = Cart.findByUserId(User.currentUserId);
         const cart =  document.getElementById('cart');
-        alert('this is your shopping cart')
-        // debugger
-        // if ((cartId.products.length === 0) || (cartId.products == undefined)) {
-        //     cart.innerText = "You have no products i nyour csrt. Start shopping now."
-        // } else {
-        //     cartId.products.forEach(item => {
-        //         const li = document.createElement('li');
-        //         const removeButton = document.createElement('button');
-        //         removeButton.innerText = 'Remove'
-        //         li.innerHTML = `
-        //             <p>${item.name}</p>
-        //             <p>${item.jewelryType}</p>
-        //             <p>${item.metalType}</p>
-        //             <p>${item.size}</p>
-        //             ${removeButton}
-        //         `
-        //         
-        //         
-        //         cart.appendChild(li);
-        //         removeButton.addEventListener('click', Cart.removeFromCart(prod, e))
-        //     })
-        //      <p>Subtotal${cartId.calculatePrice()}</p>
-        //      let button = document.createElement('button');
-        //      button.id = 'checkout';
-        //      button.innerText = 'Checkout';
-        //      cart.appendChild(button);
-        //      button.addEventListener('click', Cart.checkout)
-        // }
+        if ((cartId.products.length === 0) || (cartId.products == undefined)) {
+            cart.innerText = "You have no products i nyour csrt. Start shopping now."
+        } else {
+            cartId.products.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <p>${item.name}</p>
+                    <p>${item.jewelryType}</p>
+                    <p>${item.metalType}</p>
+                    <p>${item.size}</p>
+                    <button id="remove">Remove</button>
+                `
+                cart.appendChild(li);
+                document.getElementById('remove').addEventListener('click', Cart.removeFromCart)
+            })
+            const price = document.createElement('p');
+            price.textContent = `Subtotal $${cartId.calculatePrice()}`
+            let button = document.createElement('button');
+            button.id = 'checkout';
+            button.innerText = 'Checkout';
+            cart.appendChild(price);
+            cart.appendChild(button);
+            button.addEventListener('click', Cart.checkout)
+        }
     }
 
     static checkout(e) {
@@ -62,7 +57,7 @@ class Cart {
             products: thisCart.products,
             user_id: thisCart.userId
         }
-        CartApi.createCart(data);
+        CartApi.updateCart(data);
         // OR JewelryProduct.updateProduct(data);
     }
 
