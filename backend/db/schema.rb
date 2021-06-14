@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_210034) do
+ActiveRecord::Schema.define(version: 2021_06_14_160916) do
 
   create_table "jewelry_products", force: :cascade do |t|
     t.string "name"
     t.string "font_family"
     t.string "size"
     t.string "metal_type"
-    t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "jewelry_type"
