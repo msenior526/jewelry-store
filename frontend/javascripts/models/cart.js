@@ -7,9 +7,10 @@ class Cart {
     }
 
     static addItemToCart(item) {
-        const cart = Cart.findByUserId(User.currentUserId);
-        cart.products.push(item);
-        console.log(cart.products);
+        alert(`${item.name} ${item.jewelryType} was added to your cart`)
+        // const cart = Cart.findByUserId(User.currentUserId);
+        // cart.products.push(item);
+        // console.log(cart.products);
     }
 
     static findByUserId(id) {
@@ -38,10 +39,19 @@ class Cart {
         //             <p>${item.metalType}</p>
         //             <p>${item.size}</p>
         //             <p>Subtotal${cartId.calculatePrice()}</p>
+        //              <button id='checkout'>Checkout<button>
         //         `
         //         return cart.appendChild(li);
         //     })
         // }
+    }
 
+    static checkout(e) {
+        e.preventDefault();
+        let data = {
+            products: thisCart.products,
+            user_id: thisCart.userId
+        }
+        CartApi.createCart(data);
     }
 }
