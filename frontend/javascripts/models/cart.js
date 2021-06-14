@@ -12,16 +12,18 @@ class Cart {
         currentCart.products.push(item);
         console.log(currentCart.products);
         const li = document.createElement('li');
+        li.id = `prod-${item.id}`;
+        let button = document.createElement('button');
+        button.textContent = "Remove"
         li.innerHTML = `
-            <p>${item.name}</p>
-            <p>${item.jewelryType}</p>
-            <p>${item.metalType}</p>
-            <p>${item.size}</p>
-            <button id="remove">Remove</button>
+        <p>${item.name}</p>
+        <p>${item.jewelryType}</p>
+        <p>${item.metalType}</p>
+        <p>${item.size}</p>
         `
         cart.appendChild(li);
-        document.getElementById('remove').addEventListener('click', (e) => Cart.removeFromCart)
-        debugger
+        li.appendChild(button);
+        button.addEventListener('click', Cart.removeFromCart)
     }
 
     static findByUserId(id) {
