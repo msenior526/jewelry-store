@@ -54,7 +54,6 @@ class Cart {
     static checkout(e) {
         e.preventDefault();
         let thisCart = Cart.findByUserId(User.currentUserId);
-        debugger 
         let data = {
             products: thisCart.products,
             user_id: thisCart.userId

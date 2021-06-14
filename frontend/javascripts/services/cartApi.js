@@ -1,6 +1,5 @@
 class CartApi {
     static createCart(data) {
-        debugger
         return fetch(`http://localhost:3000/shopping_carts`, {
             method: 'POST', 
             headers: {
@@ -9,6 +8,7 @@ class CartApi {
               },
               body: JSON.stringify(data)
         })
-        .then(resp.json())
+        .then(resp => resp.json())
+        .then(json => {debugger})
     }
 }
