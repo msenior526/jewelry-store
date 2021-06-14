@@ -54,9 +54,13 @@ class Cart {
     static checkout(e) {
         e.preventDefault();
         let thisCart = Cart.findByUserId(User.currentUserId);
+        let jewelry_product_ids = thisCart.products.map(product => {
+            return product.id;
+        })
+        debugger
         let data = {
-            products: thisCart.products,
-            user_id: thisCart.userId
+            user_id: thisCart.userId,
+            jewelry_product_ids: jewelry_product_ids
         }
         CartApi.createCart(data);
         // OR JewelryProduct.updateProduct(data);

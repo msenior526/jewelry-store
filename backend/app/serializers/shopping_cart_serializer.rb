@@ -1,5 +1,4 @@
 class ShoppingCartSerializer
   include JSONAPI::Serializer
-  belongs_to :user
-  has_many :jewelry_products
+  attributes :user_id, :jewelry_product_ids 
 end

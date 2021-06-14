@@ -10,5 +10,6 @@ class CartApi {
         })
         .then(resp => resp.json())
         .then(json => {debugger})
+        .catch(err => console.log(err))
     }
 }

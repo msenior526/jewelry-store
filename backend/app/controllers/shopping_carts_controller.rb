@@ -4,10 +4,8 @@ class ShoppingCartsController < ApplicationController
   # GET /shopping_carts
   def index
     @shopping_carts = ShoppingCart.all
-    options = {
-      include: [:user]
-    }
-    render json: ShoppingCartSerializer.new(@shopping_carts, options).serializable_hash.to_json
+
+    render json: ShoppingCartSerializer.new(@shopping_carts).serializable_hash.to_json
   end
 
   # GET /shopping_carts/1
@@ -17,10 +15,13 @@ class ShoppingCartsController < ApplicationController
 
   # POST /shopping_carts
   def create
-    @shopping_cart = ShoppingCart.new(shopping_cart_params)
-
+    @shopping_cart = ShoppingCart.new(user_id: params['user_id']) do |cart|
+      cart.jewelry_product_ids = params['jewelry_product_ids']
+    end
     if @shopping_cart.save
-      render json: @shopping_cart, status: :created, location: @shopping_cart
+      byebug
+      render json: ShoppingCartSerializer.new(@shopping_cart).serializable_hash.to_json
+      # , status: :created, location: @shopping_cart
     else
       render json: @shopping_cart.errors, status: :unprocessable_entity
     end
@@ -48,6 +49,6 @@ class ShoppingCartsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def shopping_cart_params
-      params.fetch(:shopping_cart, {})
+      params.fetch(:shopping_cart).permit(:user_id, jewelry_product_ids: [])
     end
 end
