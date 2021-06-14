@@ -39,10 +39,14 @@ class Cart {
         //             <p>${item.metalType}</p>
         //             <p>${item.size}</p>
         //             <p>Subtotal${cartId.calculatePrice()}</p>
-        //              <button id='checkout'>Checkout<button>
         //         `
-        //         return cart.appendChild(li);
+        //         cart.appendChild(li);
         //     })
+        //      let button = document.createElement('button');
+        //      button.id = 'checkout';
+        //      button.innerText = 'Checkout';
+        //      cart.appendChild(button);
+        //      button.addEventListener('click', Cart.checkout)
         // }
     }
 
