@@ -7,9 +7,21 @@ class Cart {
     }
 
     static addItemToCart(item) {
-        const cart = Cart.findByUserId(User.currentUserId);
-        cart.products.push(item);
-        console.log(cart.products);
+        const currentCart = Cart.findByUserId(User.currentUserId);
+        const cart =  document.getElementById('cart');
+        currentCart.products.push(item);
+        console.log(currentCart.products);
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <p>${item.name}</p>
+            <p>${item.jewelryType}</p>
+            <p>${item.metalType}</p>
+            <p>${item.size}</p>
+            <button id="remove">Remove</button>
+        `
+        cart.appendChild(li);
+        document.getElementById('remove').addEventListener('click', (e) => Cart.removeFromCart)
+        debugger
     }
 
     static findByUserId(id) {
@@ -23,32 +35,17 @@ class Cart {
     }
 
     static display() {
-        const cartId = Cart.findByUserId(User.currentUserId);
+        const currentCart = Cart.findByUserId(User.currentUserId);
         const cart =  document.getElementById('cart');
-        if ((cartId.products.length === 0) || (cartId.products == undefined)) {
-            cart.innerText = "You have no products i nyour csrt. Start shopping now."
-        } else {
-            cartId.products.forEach(item => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    <p>${item.name}</p>
-                    <p>${item.jewelryType}</p>
-                    <p>${item.metalType}</p>
-                    <p>${item.size}</p>
-                    <button id="remove">Remove</button>
-                `
-                cart.appendChild(li);
-                document.getElementById('remove').addEventListener('click', Cart.removeFromCart)
-            })
-            const price = document.createElement('p');
-            price.textContent = `Subtotal $${cartId.calculatePrice()}`
+        const price = document.createElement('p');
+            price.textContent = `Subtotal $${currentCart.calculatePrice()}`
             let button = document.createElement('button');
             button.id = 'checkout';
             button.innerText = 'Checkout';
             cart.appendChild(price);
             cart.appendChild(button);
             button.addEventListener('click', Cart.checkout)
-        }
+            cart.hidden = false;
     }
 
     static checkout(e) {
@@ -57,7 +54,6 @@ class Cart {
         let jewelry_product_ids = thisCart.products.map(product => {
             return product.id;
         })
-        debugger
         let data = {
             user_id: thisCart.userId,
             jewelry_product_ids: jewelry_product_ids
@@ -66,7 +62,8 @@ class Cart {
         // OR JewelryProduct.updateProduct(data);
     }
 
-    static removeFromCart(prod, e) {
+    static removeFromCart(e) {
+        debugger
         e.preventDefault();
         e.target.parentElement
     }
