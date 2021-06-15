@@ -8,7 +8,6 @@ class Cart {
     }
 
     static addItemToCart(item) {
-        debugger
         const cart =  document.getElementById('cart');
         Cart.currentCart.products.push(item);
         console.log(Cart.currentCart.products);
@@ -47,22 +46,26 @@ class Cart {
             <h2>YOUR CART</h2>
             <div class='content'>
             <ul id='cart-product-list'></ul>
-            <h5>Subtotal: ${price}</h6>
             </div>
             ` 
             Cart.currentCart.products.forEach((product) => Cart.displayProduct(product))
+            const button = document.createElement('button');
+            button.textContent = 'Checkout'
+            document.getElementById('cart-product-list').appendChild(button);
+            button.addEventListener('click', Cart.checkout)
         }
     }
     
     static checkout(e) {
         e.preventDefault();
-        debugger
         let jewelry_product_ids = Cart.currentCart.products.map(product => {
             return product.id;
         })
         let data = {
+            id: Cart.currentCart.id,
             jewelry_product_ids: jewelry_product_ids
         }
+        debugger
         CartApi.updateCart(data);
         // OR JewelryProduct.updateProduct(data);
     }
@@ -89,7 +92,6 @@ class Cart {
                     Cart.currentCart.products.splice(i, 1); 
                 }
             }
-            debugger
             ul.removeChild(e.target.parentElement);
             console.log(Cart.currentCart.products)
         })

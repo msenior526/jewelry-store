@@ -1,6 +1,5 @@
 class CartApi {
     static createCart(data) {
-        debugger
         return fetch("http://localhost:3000/shopping_carts", {
             method: 'POST', 
             headers: {
@@ -18,6 +17,7 @@ class CartApi {
     }
 
     static updateCart(data) {
+        debugger
         return fetch(`https://localhost:3000/shopping_carts/${data.id}`, {
             method: 'PATCH', 
             headers: {
