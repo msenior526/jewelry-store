@@ -16,7 +16,7 @@ class JewelryProductsController < ApplicationController
   # POST /jewelry_products
   def create
     @jewelry_product = JewelryProduct.new(jewelry_product_params)
-
+     
     if @jewelry_product.save
       render json: @jewelry_product, status: :created, location: @jewelry_product
     else

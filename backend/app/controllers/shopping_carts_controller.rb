@@ -5,20 +5,20 @@ class ShoppingCartsController < ApplicationController
   def index
     @shopping_carts = ShoppingCart.all
 
-    render json: ShoppingCartSerializer.new(@shopping_carts).serializable_hash.to_json
+    render json: @shopping_carts.to_json(include: [:jewelry_products])
   end
 
   # GET /shopping_carts/1
   def show
-    render json: @shopping_cart
+    render json: @shopping_cart.to_json(include: [:jewelry_products])
   end
 
   # POST /shopping_carts
   def create
-    @shopping_cart = ShoppingCart.new(shopping_cart_params(:user_id))
+    @shopping_cart = ShoppingCart.new(shopping_cart_params)
 
     if @shopping_cart.save
-      render json: ShoppingCartSerializer.new(@shopping_cart).serializable_hash.to_json, status: :created, location: @shopping_cart
+      render json: @shopping_cart, status: :created, location: @shopping_cart
     else
       byebug
       render json: @shopping_cart.errors, status: :unprocessable_entity
@@ -27,9 +27,12 @@ class ShoppingCartsController < ApplicationController
 
   # PATCH/PUT /shopping_carts/1
   def update
-    if @shopping_cart.update(shopping_cart_params)
+    @shopping_cart.jewelry_product_ids = shopping_cart_params['jewelry_product_ids']
+    if @shopping_cart.save
+      byebug
       render json: @shopping_cart
     else
+      byebug
       render json: @shopping_cart.errors, status: :unprocessable_entity
     end
   end
@@ -46,7 +49,7 @@ class ShoppingCartsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def shopping_cart_params(*args)
-      params.fetch(:shopping_cart).permit(*args)
+    def shopping_cart_params
+      params.require(:shopping_cart).permit!
     end
 end

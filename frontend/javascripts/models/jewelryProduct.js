@@ -12,17 +12,12 @@ class JewelryProduct {
         JewelryProduct.all.push(this)
     }
 
-    get username() {
-        return User.findById(this.userId).username
-    }
-
     static handleSubmit(e) {
             e.preventDefault();
             const user = User.currentUserId;
             let formData = {
                 name: nameInput.value,
                 user_id: user,
-                quantity: quantityInput.value,
                 size: sizeInput.value,
                 metal_type: metalInput.value,
                 font_family: fontInput.value,

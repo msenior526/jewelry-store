@@ -1,5 +1,6 @@
 class CartApi {
     static createCart(data) {
+        debugger
         return fetch("http://localhost:3000/shopping_carts", {
             method: 'POST', 
             headers: {
@@ -10,15 +11,15 @@ class CartApi {
         })
         .then(resp => resp.json())
         .then(json => {
-            const cart = new Cart(json.data.attributes);
+            const cart = new Cart(json);
             Cart.currentCart = cart;
         })
         .catch(err => console.log(err))
     }
 
     static updateCart(data) {
-        debugger
-        return fetch(`https://localhost:3000/shopping_carts/${data.id}`, {
+        const currentId = Cart.currentCart.id;
+        return fetch(`http://localhost:3000/shopping_carts/${currentId}`, {
             method: 'PATCH', 
             headers: {
                 "Content-Type": "application/json",
