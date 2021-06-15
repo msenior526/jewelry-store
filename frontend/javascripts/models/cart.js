@@ -9,10 +9,9 @@ class Cart {
 
     static addItemToCart(item) {
         debugger
-        const currentCart = Cart.findByUserId(User.currentUserId);
         const cart =  document.getElementById('cart');
-        currentCart.products.push(item);
-        console.log(currentCart.products);
+        Cart.currentCart.products.push(item);
+        console.log(Cart.currentCart.products);
     }
 
     static findByUserId(id) {
@@ -26,7 +25,6 @@ class Cart {
     }
 
     static display() {
-        const currentCart = Cart.findByUserId(User.currentUserId);
         mainDiv.innerHTML = "";
         const div =  document.createElement('div');
         div.id = 'cart';
@@ -34,7 +32,7 @@ class Cart {
         const span = document.createElement('span');
         span.innerText = 'x';
         div.appendChild(span);
-        if (currentCart.products.length === 0) {
+        if (Cart.currentCart.products.length === 0) {
            div.innerHTML = `
             <span>&times</span>
             <h2>YOUR CART</h2>
@@ -43,7 +41,7 @@ class Cart {
             </div>
             ` 
         } else {
-            const price = currentCart.calculatePrice()
+            const price = Cart.currentCart.calculatePrice()
             div.innerHTML = `
             <span>&times</span>
             <h2>YOUR CART</h2>
@@ -52,21 +50,20 @@ class Cart {
             <h5>Subtotal: ${price}</h6>
             </div>
             ` 
-            currentCart.products.forEach((product) => Cart.displayProduct(product))
+            Cart.currentCart.products.forEach((product) => Cart.displayProduct(product))
         }
     }
     
     static checkout(e) {
         e.preventDefault();
-        let thisCart = Cart.findByUserId(User.currentUserId);
-        let jewelry_product_ids = thisCart.products.map(product => {
+        debugger
+        let jewelry_product_ids = Cart.currentCart.products.map(product => {
             return product.id;
         })
         let data = {
-            user_id: thisCart.userId,
             jewelry_product_ids: jewelry_product_ids
         }
-        CartApi.createCart(data);
+        CartApi.updateCart(data);
         // OR JewelryProduct.updateProduct(data);
     }
     
@@ -87,15 +84,14 @@ class Cart {
         removeButton.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            let currentCart = Cart.findByUserId(User.currentUserId);
-            for( let i = 0; i < currentCart.products.length; i++){ 
-                if ( currentCart.products[i] === product) { 
-                    currentCart.products.splice(i, 1); 
+            for( let i = 0; i < Cart.currentCart.products.length; i++){ 
+                if ( Cart.currentCart.products[i] === product) { 
+                    Cart.currentCart.products.splice(i, 1); 
                 }
             }
             debugger
             ul.removeChild(e.target.parentElement);
-            console.log(currentCart.products)
+            console.log(Cart.currentCart.products)
         })
     }
 }
