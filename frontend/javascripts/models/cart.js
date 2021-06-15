@@ -1,7 +1,8 @@
 class Cart {
     static all = [];
     static currentCart = null;
-    constructor(user_id) {
+    constructor(id, user_id) {
+        this.id = id,
         this.userId = user_id,
         this.products = [],
         Cart.all.push(this)
@@ -62,10 +63,9 @@ class Cart {
             return product.id;
         })
         let data = {
-            id: Cart.currentCart.id,
+            id: Cart.currentCart.id.id,
             jewelry_product_ids: jewelry_product_ids
         }
-        debugger
         CartApi.updateCart(data);
         // OR JewelryProduct.updateProduct(data);
     }
