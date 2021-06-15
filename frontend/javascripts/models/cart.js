@@ -11,30 +11,6 @@ class Cart {
         const cart =  document.getElementById('cart');
         currentCart.products.push(item);
         console.log(currentCart.products);
-        const li = document.createElement('li');
-        li.id = `prod-${item.id}`;
-        let removeButton = document.createElement('button');
-        removeButton.textContent = "Remove"
-        li.innerHTML = `
-        <p>${item.name}</p>
-        <p>${item.jewelryType}</p>
-        <p>${item.metalType}</p>
-        <p>${item.size}</p>
-        `
-        cart.appendChild(li);
-        li.appendChild(removeButton);
-        let product = item;
-        removeButton.addEventListener('click', e => {
-            e.preventDefault();
-            e.stopPropagation();
-            for( let i = 0; i < currentCart.products.length; i++){ 
-                if ( currentCart.products[i] === product) { 
-                    currentCart.products.splice(i, 1); 
-                }
-            }
-            cart.removeChild(e.target.parentElement);
-            console.log(currentCart.products)
-        })
     }
 
     static findByUserId(id) {
@@ -48,19 +24,36 @@ class Cart {
     }
 
     static display() {
-        const cart =  document.getElementById('cart');
-        const price = document.createElement('p');
         const currentCart = Cart.findByUserId(User.currentUserId);
-        price.textContent = `Subtotal $${currentCart.calculatePrice()}`
-        cart.appendChild(price);
-            let button = document.createElement('button');
-            button.id = 'checkout';
-            button.innerText = 'Checkout';
-            cart.appendChild(button);
-            cart.style.display = 'block';
-            button.addEventListener('click', Cart.checkout)
+        mainDiv.innerHTML = "";
+        const div =  document.createElement('div');
+        div.id = 'cart';
+        mainDiv.appendChild(div);
+        const span = document.createElement('span');
+        span.innerText = 'x';
+        div.appendChild(span);
+        if (currentCart.products.length === 0) {
+           div.innerHTML = `
+            <span>&times</span>
+            <h2>YOUR CART</h2>
+            <div class='content'>
+            <p>You have no items in your cart. Start shopping.</p>
+            </div>
+            ` 
+        } else {
+            const price = currentCart.calculatePrice()
+            div.innerHTML = `
+            <span>&times</span>
+            <h2>YOUR CART</h2>
+            <div class='content'>
+            <ul id='cart-product-list'></ul>
+            <h5>Subtotal: ${price}</h6>
+            </div>
+            ` 
+            currentCart.products.forEach((product) => Cart.displayProduct(product))
+        }
     }
-
+    
     static checkout(e) {
         e.preventDefault();
         let thisCart = Cart.findByUserId(User.currentUserId);
@@ -74,10 +67,33 @@ class Cart {
         CartApi.createCart(data);
         // OR JewelryProduct.updateProduct(data);
     }
-
-    // static removeFromCart(e) {
-    //     e.preventDefault();
-    //     debugger
-    //     cart.removeChild(e.target.parentElement);
-    // }
+    
+    static displayProduct(product) {
+        const ul = document.getElementById('cart-product-list');
+        const li = document.createElement('li');
+        li.id = `prod-${product.id}`;
+        let removeButton = document.createElement('button');
+        removeButton.textContent = "Remove"
+        li.innerHTML = `
+        <p>${product.name}</p>
+        <p>${product.jewelryType}</p>
+        <p>${product.metalType}</p>
+        <p>${product.size}</p>
+        `
+        ul.appendChild(li);
+        li.appendChild(removeButton);
+        removeButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            let currentCart = Cart.findByUserId(User.currentUserId);
+            for( let i = 0; i < currentCart.products.length; i++){ 
+                if ( currentCart.products[i] === product) { 
+                    currentCart.products.splice(i, 1); 
+                }
+            }
+            debugger
+            ul.removeChild(e.target.parentElement);
+            console.log(currentCart.products)
+        })
+    }
 }
