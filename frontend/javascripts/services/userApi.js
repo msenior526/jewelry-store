@@ -5,7 +5,7 @@ class UserApi {
         .then(json => {
             json.data.forEach(user => {
                 const newUser = new User(user.attributes);
-                return newUser.display();
+                // return newUser.display();
             })
         })
         .catch(err => alert(err))
@@ -24,7 +24,8 @@ class UserApi {
         .then(json => {
             let user = new User(json.data.attributes);
             User.currentUserId = user.id;
-            new Cart(user.id)
+            const userData = { user_id: user.id}
+            CartApi.createCart(userData)
 
             // user.display();
         })

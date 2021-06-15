@@ -1,5 +1,6 @@
 class Cart {
     static all = [];
+    static currentCart = null;
     constructor(user_id) {
         this.userId = user_id,
         this.products = [],
@@ -7,6 +8,7 @@ class Cart {
     }
 
     static addItemToCart(item) {
+        debugger
         const currentCart = Cart.findByUserId(User.currentUserId);
         const cart =  document.getElementById('cart');
         currentCart.products.push(item);
