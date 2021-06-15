@@ -13,8 +13,8 @@ class Cart {
         console.log(currentCart.products);
         const li = document.createElement('li');
         li.id = `prod-${item.id}`;
-        let button = document.createElement('button');
-        button.textContent = "Remove"
+        let removeButton = document.createElement('button');
+        removeButton.textContent = "Remove"
         li.innerHTML = `
         <p>${item.name}</p>
         <p>${item.jewelryType}</p>
@@ -22,8 +22,19 @@ class Cart {
         <p>${item.size}</p>
         `
         cart.appendChild(li);
-        li.appendChild(button);
-        button.addEventListener('click', Cart.removeFromCart)
+        li.appendChild(removeButton);
+        let product = item;
+        removeButton.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+            for( let i = 0; i < currentCart.products.length; i++){ 
+                if ( currentCart.products[i] === product) { 
+                    currentCart.products.splice(i, 1); 
+                }
+            }
+            cart.removeChild(e.target.parentElement);
+            console.log(currentCart.products)
+        })
     }
 
     static findByUserId(id) {
@@ -37,17 +48,17 @@ class Cart {
     }
 
     static display() {
-        const currentCart = Cart.findByUserId(User.currentUserId);
         const cart =  document.getElementById('cart');
         const price = document.createElement('p');
-            price.textContent = `Subtotal $${currentCart.calculatePrice()}`
+        const currentCart = Cart.findByUserId(User.currentUserId);
+        price.textContent = `Subtotal $${currentCart.calculatePrice()}`
+        cart.appendChild(price);
             let button = document.createElement('button');
             button.id = 'checkout';
             button.innerText = 'Checkout';
-            cart.appendChild(price);
             cart.appendChild(button);
+            cart.style.display = 'block';
             button.addEventListener('click', Cart.checkout)
-            cart.hidden = false;
     }
 
     static checkout(e) {
@@ -64,9 +75,9 @@ class Cart {
         // OR JewelryProduct.updateProduct(data);
     }
 
-    static removeFromCart(e) {
-        debugger
-        e.preventDefault();
-        e.target.parentElement
-    }
+    // static removeFromCart(e) {
+    //     e.preventDefault();
+    //     debugger
+    //     cart.removeChild(e.target.parentElement);
+    // }
 }
