@@ -29,10 +29,8 @@ class ShoppingCartsController < ApplicationController
   def update
     @shopping_cart.jewelry_product_ids = shopping_cart_params['jewelry_product_ids']
     if @shopping_cart.save
-      byebug
       render json: @shopping_cart
     else
-      byebug
       render json: @shopping_cart.errors, status: :unprocessable_entity
     end
   end
