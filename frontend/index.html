@@ -9,10 +9,10 @@
     
 </head>
 <body>
-    <div class='top'>
+    <div class='navbar'>
         <nav class='navbar'>
             <ul class='nav'>
-                <a href='#'id="title" class='brand'><h1>Jewelry Store</h1></a>
+                <a href='index.html' id="title" class='brand'><h1>Jewelry Store</h1></a>
                 <li class='nav-element'>
                     <a href='#user-list'>Users</a>
                 </li>
@@ -22,25 +22,19 @@
             </ul>
             <img src="images/cart.png" alt="cart" id='cart-img'>
         </nav>
-    </div>
-    
-    <br>
-    <br>
-    <br>
-    <br>
-    
+    </div>   
     <div id='main'>
-    <div id='login-signup'>
-        <h2>ENTER A USERNAME AND PASSWORD TO START SHOPPING</h2>
-        <form id='username-form'>
-            <label for="username">Username</label>
-            <input type='text' name="username" placeholder="Username" id="user-username">
-            <label for="password">Password</label>
-            <input type='password' name="password" placeholder="Password" id="user-password">
-            <input type='submit' value="Submit" id='submit-user'>
-        </form>
-    </div>
-            <div class="jewelry-images">
+        <div id='login-signup'>
+            <h2>ENTER A USERNAME AND PASSWORD TO START SHOPPING</h2>
+            <form id='username-form'>
+                <label for="username">Username</label>
+                <input type='text' name="username" placeholder="Username" id="user-username">
+                <label for="password">Password</label>
+                <input type='password' name="password" placeholder="Password" id="user-password">
+                <input type='submit' value="Submit" id='submit-user'>
+            </form>
+        </div>
+        <div class="jewelry-images">
             <h3 id='personalized'>CLICK ON AN IMAGE TO PERSONALIZE YOUR JEWELRY</h4>
             <div class="jewelry-img">
                 <img src="images/rose-gold-necklace.jpg" alt="Personalized rose gold necklace with name Ashley" id='necklace-img'>
@@ -80,10 +74,6 @@
         </div>
         <ul id='jewelry-list'></ul>
         <ul id='user-list'></ul>
-        <!-- <ul id='cart'>
-            <h6 id='subtotal'>Subtotal:</h6>
-            <button id='checkout'>Checkout</button>
-        </ul> -->
     </div>
     
     <script src='javascripts/global.js'></script>
