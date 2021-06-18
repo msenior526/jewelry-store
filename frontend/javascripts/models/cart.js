@@ -25,34 +25,17 @@ class Cart {
     }
 
     static display() {
-        mainDiv.innerHTML = "";
-        const div =  document.createElement('div');
-        div.id = 'cart';
-        mainDiv.appendChild(div);
-        const span = document.createElement('span');
-        span.innerText = 'x';
-        div.appendChild(span);
+        mainDiv.style.display = 'none';
+        document.getElementById('cart').style.display = 'block';
         if (Cart.currentCart.products.length === 0) {
-           div.innerHTML = `
-            <span>&times</span>
-            <h2>YOUR CART</h2>
-            <div class='content'>
-            <p>You have no items in your cart. Start shopping.</p>
-            </div>
-            ` 
+           document.getElementById('cart-products').innerHTML = `
+            <p>You have no products in your cart. Start shopping now!`;
         } else {
             const price = Cart.currentCart.calculatePrice()
-            div.innerHTML = `
-            <span>&times</span>
-            <h2>YOUR CART</h2>
-            <div class='content'>
-            <ul id='cart-product-list'></ul>
-            </div>
-            ` 
             Cart.currentCart.products.forEach((product) => Cart.displayProduct(product))
             const button = document.createElement('button');
             button.textContent = 'Checkout'
-            document.getElementById('cart-product-list').appendChild(button);
+            document.getElementById('cart-products').appendChild(button);
             button.addEventListener('click', Cart.checkout)
         }
     }
@@ -82,7 +65,7 @@ class Cart {
     }
     
     static displayProduct(product) {
-        const ul = document.getElementById('cart-product-list');
+        const ul = document.getElementById('products');
         const li = document.createElement('li');
         li.id = `prod-${product.id}`;
         let removeButton = document.createElement('button');
