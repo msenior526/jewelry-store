@@ -105,7 +105,7 @@ ul div.product {
 }
 
 div#main {
-    /* display: none; */
+    display: none;
 } 
 
 div#login-signup {
