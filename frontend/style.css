@@ -106,6 +106,7 @@ ul div.product {
 
 div#main {
     display: none;
+    margin-top: 120px;
 } 
 
 div#login-signup {
@@ -184,5 +185,5 @@ p{
 }
 
 #cart {
-    /* display: none; */
+    display: none;
 }
