@@ -68,6 +68,16 @@ class Cart {
             }
         }
         CartApi.updateCart(data);
+        mainDiv.innerHTML = "";
+        const div =  document.createElement('div');
+        div.id = 'checkout';
+        mainDiv.appendChild(div);
+        const message =  document.createElement('h5');
+        div.appendChild(message);
+        message.textContent = `THANK YOU FOR SHOPPING AT THE JEWELRY STORE!
+        SUBTOTAL: ${Cart.currentCart.calculatePrice()}`
+       
+        debugger
         // OR JewelryProduct.updateProduct(data);
     }
     
