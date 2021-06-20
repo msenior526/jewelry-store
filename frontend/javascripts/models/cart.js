@@ -1,6 +1,8 @@
 class Cart {
     static all = [];
     static currentCart = null;
+    static currentCartProducts = Cart.currentCart.products;
+
     constructor({id, user_id}) {
         this.id = id,
         this.userId = user_id,
@@ -10,8 +12,8 @@ class Cart {
 
     static addItemToCart(item) {
         const cart =  document.getElementById('cart');
-        Cart.currentCart.products.push(item);
-        console.log(Cart.currentCart.products);
+        Cart.currentCartProducts.push(item);
+        console.log(Cart.currentCartProducts);
     }
 
     static findByUserId(id) {
@@ -27,7 +29,7 @@ class Cart {
     static display() {
         mainDiv.style.display = 'none';
         document.getElementById('cart').style.display = 'block';
-        if (Cart.currentCart.products.length === 0) {
+        if (Cart.currentCartProducts.length === 0) {
            document.getElementById('cart-products').innerHTML = `
             <p>You have no products in your cart. Start shopping now!`;
         } else {
@@ -36,7 +38,7 @@ class Cart {
             <ul id='products'></ul>
             `;
             const price = Cart.currentCart.calculatePrice()
-            Cart.currentCart.products.forEach((product) => Cart.displayProduct(product))
+            Cart.currentCartProducts.forEach((product) => Cart.displayProduct(product))
             const button = document.createElement('button');
             const h5 = document.createElement('h5');
             h5.textContent = `Subtotal: $${Cart.currentCart.calculatePrice()}`
@@ -49,7 +51,7 @@ class Cart {
     
     static checkout(e) {
         e.preventDefault();
-        let jewelry_product_ids = Cart.currentCart.products.map(product => {
+        let jewelry_product_ids = Cart.currentCartProducts.map(product => {
             return product.id;
         })
         let data = {
@@ -80,13 +82,13 @@ class Cart {
         removeButton.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            for( let i = 0; i < Cart.currentCart.products.length; i++){ 
-                if ( Cart.currentCart.products[i] === product) { 
-                    Cart.currentCart.products.splice(i, 1); 
+            for( let i = 0; i < Cart.currentCartProducts.length; i++){ 
+                if ( Cart.currentCartProducts[i] === product) { 
+                    Cart.currentCartProducts.splice(i, 1); 
                 }
             }
             ul.removeChild(e.target.parentElement);
-            console.log(Cart.currentCart.products)
+            console.log(Cart.currentCartProducts)
         })
     }
 }
