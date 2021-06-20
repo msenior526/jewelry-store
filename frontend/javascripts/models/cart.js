@@ -62,8 +62,6 @@ class Cart {
             }
         }
         CartApi.updateCart(data);
-        debugger
-        // OR JewelryProduct.updateProduct(data);
     }
     
     static displayProduct(product) {
@@ -97,5 +95,10 @@ class Cart {
 
     static updatePrice() {
         return document.getElementById('subtotal').textContent = `Subtotal: $${Cart.currentCart.calculatePrice()}`;
+    }
+
+    static displayConfirmation() {
+        document.getElementById('confirmation').style.hidden - false;
+        debugger
     }
 }
