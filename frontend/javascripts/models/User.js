@@ -26,6 +26,11 @@ class User {
             e.target.reset();
             mainDiv.style.display = "block"
             enterSpaDiv.style.display = 'none'
+            document.querySelector('h1.brand').addEventListener('click', e => {
+                mainDiv.style.display = "block"
+                document.getElementById('cart').style.display = 'none';
+                debugger
+            })
     }
 
     static findByName(username) {
