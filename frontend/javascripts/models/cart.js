@@ -31,6 +31,10 @@ class Cart {
            document.getElementById('cart-products').innerHTML = `
             <p>You have no products in your cart. Start shopping now!`;
         } else {
+            document.getElementById('cart-products').innerHTML = 
+            `
+            <ul id='products'></ul>
+            `;
             const price = Cart.currentCart.calculatePrice()
             Cart.currentCart.products.forEach((product) => Cart.displayProduct(product))
             const button = document.createElement('button');

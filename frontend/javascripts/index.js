@@ -19,5 +19,10 @@ document.addEventListener('DOMContentLoaded', event => {
     for (let i = 0; i < images.length; i++) {
         images[i].addEventListener('click', JewelryProduct.renderJewelryForm)
     }
+
+    document.querySelector('div#cart img').addEventListener('click', e => {
+       e.target.parentElement.style.display = 'none';
+       mainDiv.style.display = 'block';
+    })
 })
         
