@@ -42,6 +42,7 @@ class Cart {
             Cart.currentCartProducts.forEach((product) => Cart.displayProduct(product))
             const button = document.createElement('button');
             const h5 = document.createElement('h5');
+            h5.id = 'subtotal';
             h5.textContent = `Subtotal: $${Cart.currentCart.calculatePrice()}`
             button.textContent = 'Checkout'
             document.getElementById('cart-products').appendChild(h5);
@@ -89,7 +90,12 @@ class Cart {
                 }
             }
             ul.removeChild(e.target.parentElement);
+            Cart.updatePrice();
             console.log(Cart.currentCartProducts)
         })
+    }
+
+    static updatePrice() {
+        return document.getElementById('subtotal').textContent = `Subtotal: $${Cart.currentCart.calculatePrice()}`;
     }
 }
