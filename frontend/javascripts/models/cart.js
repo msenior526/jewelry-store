@@ -38,7 +38,10 @@ class Cart {
             const price = Cart.currentCart.calculatePrice()
             Cart.currentCart.products.forEach((product) => Cart.displayProduct(product))
             const button = document.createElement('button');
+            const h5 = document.createElement('h5');
+            h5.textContent = `Subtotal: $${Cart.currentCart.calculatePrice()}`
             button.textContent = 'Checkout'
+            document.getElementById('cart-products').appendChild(h5);
             document.getElementById('cart-products').appendChild(button);
             button.addEventListener('click', Cart.checkout)
         }
@@ -70,6 +73,7 @@ class Cart {
         <p>${product.jewelryType}</p>
         <p>${product.metalType}</p>
         <p>${product.size}</p>
+        <p>$${product.price}</p>
         `
         ul.appendChild(li);
         li.appendChild(removeButton);
