@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: "Mariah", password: "123")
-User.create(name: "Matteo", password: "123")
+User.create(username: "mariah101920", password: "123456")
+User.create(username: "matteo101920", password: "123456")
 
 3.times do
     JewelryProduct.create(
