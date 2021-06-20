@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: "Mariah")
-User.create(name: "Matteo")
+User.create(name: "Mariah", password: "123")
+User.create(name: "Matteo", password: "123")
 
 3.times do
     JewelryProduct.create(
@@ -15,7 +15,6 @@ User.create(name: "Matteo")
         font_family: Faker::FunnyName.name,
         size: "#{Faker::Number.between(from: 5, to: 20)}",
         metal_type: "yellow gold",
-        quantity: Faker::Number.between(from: 1, to: 5),
         jewelry_type: "necklace", 
         user_id: 1
     )
@@ -27,20 +26,7 @@ end
         font_family: Faker::FunnyName.name,
         size: "#{Faker::Number.between(from: 5, to: 20)}",
         metal_type: "silver",
-        quantity: Faker::Number.between(from: 1, to: 5),
         jewelry_type: "ring",
-        user_id: 1
-    )
-end
-
-3.times do
-    JewelryProduct.create(
-        name: Faker::Name.first_name, 
-        font_family: Faker::FunnyName.name,
-        size: "#{Faker::Number.between(from: 5, to: 20)}",
-        metal_type:  "rose gold",
-        quantity: Faker::Number.between(from: 1, to: 5),
-        jewelry_type: "bracelet",
         user_id: 2
     )
 end
@@ -50,8 +36,18 @@ end
         name: Faker::Name.first_name, 
         font_family: Faker::FunnyName.name,
         size: "#{Faker::Number.between(from: 5, to: 20)}",
+        metal_type:  "rose gold",
+        jewelry_type: "bracelet",
+        user_id: 1
+    )
+end
+
+3.times do
+    JewelryProduct.create(
+        name: Faker::Name.first_name, 
+        font_family: Faker::FunnyName.name,
+        size: "#{Faker::Number.between(from: 5, to: 20)}",
         metal_type: "white gold",
-        quantity: Faker::Number.between(from: 1, to: 5),
         jewelry_type: "necklace",
         user_id: 2
     )
