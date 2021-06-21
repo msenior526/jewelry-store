@@ -98,7 +98,30 @@ class Cart {
     }
 
     static displayConfirmation() {
-        document.getElementById('confirmation').style.hidden - false;
-        debugger
+        document.querySelector('nav img').style.display = 'none';
+        document.querySelector('nav ul li.nav-element').style.display = 'none';
+        document.getElementById('cart').innerHTML = `
+        <div id= 'confirmation-msg'>
+            <h2>THANK YOU FOR SHOPPING WITH US AT THE JEWELRY STORE!</h2>
+            <div id='cart-products'>
+            <ul id='products'>
+            </ul>
+            </div>
+        </div>`
+        const ul = document.getElementById('products');
+        Cart.currentCartProducts.forEach(product => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+        <p>${product.name}</p>
+        <p>${product.jewelryType}</p>
+        <p>${product.metalType}</p>
+        <p>${product.size}</p>
+        <p>$${product.price}</p>
+        `
+        return ul.appendChild(li);
+        })
+        const price = document.createElement('h5');
+        price.textContent = `Subtotal: $${ Cart.currentCart.calculatePrice()}`
+        document.getElementById('cart').appendChild(price);
     }
 }
