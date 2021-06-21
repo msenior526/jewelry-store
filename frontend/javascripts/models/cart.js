@@ -15,6 +15,7 @@ class Cart {
         Cart.currentCart.products.push(item);
         Cart.currentCartProducts = Cart.currentCart.products;
         console.log(Cart.currentCartProducts);
+        alert("Item added to cart!");
     }
 
     static findByUserId(id) {
