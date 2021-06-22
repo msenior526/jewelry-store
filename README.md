@@ -1,24 +1,13 @@
-# README
+# Jewelry Store
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A SPA that simulates an e-commerce jewelry store.
 
-Things you may want to cover:
+# Usage
 
-* Ruby version
+Users can 'login' and 'signup' at the same time since there isn't any authentication. Create a new personalized product and add it to your cart. You can edit your shopping cart to remove unwanted items.
 
-* System dependencies
+# Installation
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+In order run bundle install, rails db:migrate, rails db:seed, rails s and open up index.html in the browser. 
 
 * ...
