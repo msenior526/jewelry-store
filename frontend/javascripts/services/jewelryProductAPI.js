@@ -4,8 +4,7 @@ class JewelryProductApi {
         .then(resp => resp.json())
         .then(json => {
                 return json.data.forEach((product) => {
-                    let jewelry = new JewelryProduct(product.attributes);
-                    JewelryProduct.display(jewelry);
+                    JewelryProduct.display(new JewelryProduct(product.attributes));
             });
         })
         .catch(err => alert(err))
@@ -22,8 +21,7 @@ class JewelryProductApi {
           })
           .then(resp => resp.json())
           .then(json => {
-            new JewelryProduct(json);
-            JewelryProduct.display(newJewels);
+            JewelryProduct.display(new JewelryProduct(json))
           })
           .catch(err => alert(err));
     }
