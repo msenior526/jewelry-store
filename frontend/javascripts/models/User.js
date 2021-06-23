@@ -29,7 +29,6 @@ class User {
             document.querySelector('h1.brand').addEventListener('click', e => {
                 mainDiv.style.display = "block"
                 document.getElementById('cart').style.display = 'none';
-                debugger
             })
     }
 
