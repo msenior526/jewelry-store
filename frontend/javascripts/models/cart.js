@@ -29,7 +29,7 @@ class Cart {
     }
 
     static display() {
-        mainDiv.style.display = 'none';
+        mainDiv().style.display = 'none';
         document.getElementById('cart').style.display = 'block';
         if (Cart.currentCartProducts.length === 0) {
            document.getElementById('cart-products').innerHTML = `

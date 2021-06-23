@@ -13,21 +13,21 @@ class User {
         listItem.innerHTML = `
         <h4>${this.username}</h3>
         `
-        return userList.appendChild(listItem);
+        return userList().appendChild(listItem);
     }
 
     static handleSubmit(e) {
             e.preventDefault();
             let formData = {
                 username: document.getElementById('user-username').value,
-                password: passwordInput.value
+                password: passwordInput().value
             }
             UserApi.createUsers(formData);
             e.target.reset();
-            mainDiv.style.display = "block"
-            enterSpaDiv.style.display = 'none'
+            mainDiv().style.display = "block"
+            enterSpaDiv().style.display = 'none'
             document.querySelector('h1.brand').addEventListener('click', e => {
-                mainDiv.style.display = "block"
+                mainDiv().style.display = "block"
                 document.getElementById('cart').style.display = 'none';
             })
     }

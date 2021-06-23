@@ -9,21 +9,21 @@ document.addEventListener('DOMContentLoaded', event => {
     .then(JewelryProductApi.fetchProducts)
     .catch(err => console.log(err))
     
-    submitUserBtn.addEventListener('submit', User.handleSubmit)
-    submitButton.addEventListener('submit', JewelryProduct.handleSubmit)
-    cartImg.addEventListener('click', Cart.display)
+    submitUserBtn().addEventListener('submit', User.handleSubmit)
+    submitButton().addEventListener('submit', JewelryProduct.handleSubmit)
+    cartImg().addEventListener('click', Cart.display)
     
-    xButton.addEventListener('click', event => {
+    xButton().addEventListener('click', event => {
         jewelryForm().style.display = 'none';
     })
     
-    for (let i = 0; i < images.length; i++) {
-        images[i].addEventListener('click', JewelryProduct.renderJewelryForm)
+    for (let i = 0; i < images().length; i++) {
+        images()[i].addEventListener('click', JewelryProduct.renderJewelryForm)
     }
 
     document.querySelector('div#cart img').addEventListener('click', e => {
        e.target.parentElement.style.display = 'none';
-       mainDiv.style.display = 'block';
+       mainDiv().style.display = 'block';
     })
 })
         

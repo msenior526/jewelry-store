@@ -16,12 +16,12 @@ class JewelryProduct {
             e.preventDefault();
             const user = User.currentUserId;
             let formData = {
-                name: nameInput.value,
+                name: nameInput().value,
                 user_id: user,
-                size: sizeInput.value,
-                metal_type: metalInput.value,
-                font_family: fontInput.value,
-                jewelry_type: typeInput.value,
+                size: sizeInput().value,
+                metal_type: metalInput().value,
+                font_family: fontInput().value,
+                jewelry_type: typeInput().value,
             }
             JewelryProductApi.createProducts(formData);
             e.target.reset();
@@ -62,7 +62,7 @@ class JewelryProduct {
         <button class='add-to-cart'> Add To Cart</button>
         </div>
         `
-        jewelryList.appendChild(listItem);
+        jewelryList().appendChild(listItem);
             
         let div = document.querySelector(`div#prod-${prod.id}`)
         switch(prod.jewelryType) {
