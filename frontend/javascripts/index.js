@@ -1,14 +1,23 @@
 document.addEventListener('DOMContentLoaded', event => {
+    
+    Promise.all([
+        fetch("http://localhost:3000/jewelry_products"),
+        fetch("http://localhost:3000/users"),
+    ]).then((responses) => {
+        return Promise.all(responses.map((response) => {
+            return response.json();
+        }));
+    }).then((data) => {
+        data[1].data.forEach(user => {
+            return new User(user.attributes);
+        })
+        data[0].data.forEach(product => {
+            return JewelryProduct.display(new JewelryProduct(product.attributes));
+        })
+    }).catch((error) => {
+        console.log(error);
+    });
 
-    // const promise = new Promise(function(resolve, reject) {
-    //     resolve(555);
-    //     reject(777);
-    // })
-    // promise
-    // .then()
-    // .then(JewelryProductApi.fetchProducts)
-    // .catch(err => console.log(err))
-    UserApi.fetchUsers
     submitUserBtn().addEventListener('submit', User.handleSubmit)
     submitButton().addEventListener('submit', JewelryProduct.handleSubmit)
     cartImg().addEventListener('click', Cart.display)
