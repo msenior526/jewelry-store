@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', event => {
 
-    const promise = new Promise(function(resolve, reject) {
-        resolve(555);
-        reject(777);
-    })
-    promise
-    .then(UserApi.fetchUsers)
-    .then(JewelryProductApi.fetchProducts)
-    .catch(err => console.log(err))
-    
+    // const promise = new Promise(function(resolve, reject) {
+    //     resolve(555);
+    //     reject(777);
+    // })
+    // promise
+    // .then()
+    // .then(JewelryProductApi.fetchProducts)
+    // .catch(err => console.log(err))
+    UserApi.fetchUsers
     submitUserBtn().addEventListener('submit', User.handleSubmit)
     submitButton().addEventListener('submit', JewelryProduct.handleSubmit)
     cartImg().addEventListener('click', Cart.display)

@@ -32,10 +32,6 @@ class User {
             })
     }
 
-    static findByName(username) {
-        return this.all.find(user => user.username === username)
-    }
-
     static findById(id) {
         return this.all.find(user => user.id === id)
     }

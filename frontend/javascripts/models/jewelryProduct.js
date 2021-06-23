@@ -25,6 +25,7 @@ class JewelryProduct {
             }
             JewelryProductApi.createProducts(formData);
             e.target.reset();
+            alert("Success! Scroll down to see your item!")
     }
 
     static renderJewelryForm = (e) => {

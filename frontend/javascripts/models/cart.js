@@ -18,10 +18,6 @@ class Cart {
         alert("Item added to cart!");
     }
 
-    static findByUserId(id) {
-        return this.all.find(cart => cart.userId === id)
-    }
-
     calculatePrice() {
         return this.products.reduce((total, prod) => {
             return total += prod.price;
