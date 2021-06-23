@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', event => {
 
     const promise = new Promise(function(resolve, reject) {
-        resolve(777);
-        reject(555);
+        resolve(555);
+        reject(777);
     })
     promise
     .then(UserApi.fetchUsers)
     .then(JewelryProductApi.fetchProducts)
-   
+    .catch(err => console.log(err))
+    
     submitUserBtn.addEventListener('submit', User.handleSubmit)
     submitButton.addEventListener('submit', JewelryProduct.handleSubmit)
     cartImg.addEventListener('click', Cart.display)
