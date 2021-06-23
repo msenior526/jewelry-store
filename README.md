@@ -1,8 +1,8 @@
 # Jewelry Store
 
-Jewelry Store is a SPA that simulates an e-commerce jewelry store.
+Jewelry Store is a SPA that simulates an e-commerce jewelry store. It uses a Rails backend, and JavaScript frontend.
 
-# Installation
+## Installation
 
 Fork and clone this repository. Then, run 
 ```
@@ -10,9 +10,12 @@ bundle install, rails db:migrate, rails db:seed, rails s
 ```
 and open up index.html in browser. 
 
-# Usage
+## Usage
 
 Users can 'login' and 'signup' at the same time since there isn't any authentication. Create a new personalized product and add it to your cart. You can edit your shopping cart to remove unwanted items.
+
+Future updates will include:
+• JWT authentication
 
 ## Contributing
 
