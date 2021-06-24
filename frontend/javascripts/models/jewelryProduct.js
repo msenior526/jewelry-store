@@ -1,16 +1,4 @@
 class JewelryProduct {
-    // static all = []
-    // constructor({id, name,  price, size, jewelry_type, metal_type, font_family, user_id}) {
-    //     this.id = id,
-    //     this.name = name,
-    //     this.price = price,
-    //     this.size = size,
-    //     this.jewelryType = jewelry_type,
-    //     this.metalType = metal_type,
-    //     this.fontFamily = font_family,
-    //     this.userId = user_id,
-    //     JewelryProduct.all.push(this)
-    // }
 
     static handleSubmit(e) {
             e.preventDefault();
@@ -42,12 +30,6 @@ class JewelryProduct {
                 break;
         }
     }
-
-    // static findById(id) {
-    //     return this.all.filter(prod => prod.id === id)
-    // }
-
-
 
     static display = (prod) => {
         let listItem = document.createElement('li')
