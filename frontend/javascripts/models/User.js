@@ -8,6 +8,10 @@ class User {
         User.all.push(this)
     }
 
+    get carts() {
+        return Cart.all.filter(cart => cart.userId === User.currentUserId)
+    }
+
     display() {
         let listItem = document.createElement('li')
         listItem.innerHTML = `

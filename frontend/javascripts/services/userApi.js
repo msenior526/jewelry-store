@@ -1,15 +1,4 @@
 class UserApi {
-    static fetchUsers() {
-        return fetch('http://localhost:3000/users')
-        .then(resp => resp.json())
-        .then(json => {
-            json.data.forEach(user => {
-                const newUser = new User(user.attributes);
-            })
-        })
-        .catch(err => alert(err))
-    }
-
     static createUsers(data) {
         return fetch('http://localhost:3000/users', {
             method: 'POST', 
@@ -25,6 +14,7 @@ class UserApi {
             User.currentUserId = user.id;
             const userData = { user_id: user.id}
             CartApi.createCart(userData)
+            debugger
         })
         .catch(err => console.log(err))
     }

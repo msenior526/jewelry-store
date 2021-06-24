@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', event => {
     Promise.all([
         fetch("http://localhost:3000/jewelry_products"),
         fetch("http://localhost:3000/users"),
+        fetch("http://localhost:3000/shopping_carts")
     ]).then((responses) => {
         return Promise.all(responses.map((response) => {
             return response.json();
@@ -14,9 +15,10 @@ document.addEventListener('DOMContentLoaded', event => {
         data[0].data.forEach(product => {
             return JewelryProduct.display(new JewelryProduct(product.attributes));
         })
-    }).catch((error) => {
-        console.log(error);
-    });
+        data[2].forEach(cart => {
+            new Cart(cart)
+        })
+    }).catch(err => console.log(err));
 
     submitUserBtn().addEventListener('submit', User.handleSubmit)
     submitButton().addEventListener('submit', JewelryProduct.handleSubmit)
