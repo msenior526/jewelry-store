@@ -199,3 +199,7 @@ a img {
 img#up-btn {
     width: 30px;
 }
+
+ul li a#previous-purchases {
+    display: none;
+}

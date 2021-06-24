@@ -14,6 +14,8 @@ class UserApi {
             User.currentUser = user;
             const userData = { user_id: user.id}
             CartApi.createCart(userData)
+            document.getElementById('previous-purchases').style.display = 'block';
+            document.getElementById('user-carts').hidden = false;
         })
         .catch(err => console.log(err))
     }
