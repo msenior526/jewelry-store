@@ -29,6 +29,7 @@ class Cart {
     }
 
     static display() {
+        document.getElementById('user-carts').hidden = true;
         mainDiv().style.display = 'none';
         document.getElementById('cart').style.display = 'block';
         if (Cart.currentCartProducts.length === 0) {
