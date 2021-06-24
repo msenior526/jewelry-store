@@ -10,6 +10,7 @@ class CartApi {
         })
         .then(resp => resp.json())
         .then(json => {
+            debugger
             const cart = new Cart(json);
             Cart.currentCart = cart;
         })

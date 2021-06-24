@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', event => {
             return new User(user.attributes);
         })
         data[0].data.forEach(product => {
-            return JewelryProduct.display(new JewelryProduct(product.attributes));
+            JewelryProduct.display(product.attributes);
         })
         data[2].forEach(cart => {
             new Cart(cart)
         })
     }).catch(err => console.log(err));
-
+    
     submitUserBtn().addEventListener('submit', User.handleSubmit)
     submitButton().addEventListener('submit', JewelryProduct.handleSubmit)
     cartImg().addEventListener('click', Cart.display)

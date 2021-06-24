@@ -1,20 +1,20 @@
 class JewelryProduct {
-    static all = []
-    constructor({id, name,  price, size, jewelry_type, metal_type, font_family, user_id}) {
-        this.id = id,
-        this.name = name,
-        this.price = price,
-        this.size = size,
-        this.jewelryType = jewelry_type,
-        this.metalType = metal_type,
-        this.fontFamily = font_family,
-        this.userId = user_id,
-        JewelryProduct.all.push(this)
-    }
+    // static all = []
+    // constructor({id, name,  price, size, jewelry_type, metal_type, font_family, user_id}) {
+    //     this.id = id,
+    //     this.name = name,
+    //     this.price = price,
+    //     this.size = size,
+    //     this.jewelryType = jewelry_type,
+    //     this.metalType = metal_type,
+    //     this.fontFamily = font_family,
+    //     this.userId = user_id,
+    //     JewelryProduct.all.push(this)
+    // }
 
     static handleSubmit(e) {
             e.preventDefault();
-            const user = User.currentUserId;
+            const user = User.currentUser.id;
             let formData = {
                 name: nameInput().value,
                 user_id: user,
@@ -43,23 +43,21 @@ class JewelryProduct {
         }
     }
 
-    static findById(id) {
-        return this.all.filter(prod => prod.id === id)
-    }
+    // static findById(id) {
+    //     return this.all.filter(prod => prod.id === id)
+    // }
 
 
 
     static display = (prod) => {
-        let user = User.findById(prod.userId);
         let listItem = document.createElement('li')
         listItem.innerHTML = `
         <div class='product' id='prod-${prod.id}'>
         <h4>${prod.name}</h3>
-        <p>Created by: ${user.username}</p>
         <p>Size: ${prod.size}</p>
         <p>Price: ${prod.price}</p>
-        <p>Metal Type: ${prod.metalType}</p>
-        <p>Jewelry Type: ${prod.jewelryType}</p>
+        <p>Metal Type: ${prod.metal_type}</p>
+        <p>Jewelry Type: ${prod.jewelry_type}</p>
         <button class='add-to-cart'> Add To Cart</button>
         </div>
         `

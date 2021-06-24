@@ -11,10 +11,9 @@ class UserApi {
         .then(resp => resp.json())
         .then(json => {
             let user = new User(json.data.attributes);
-            User.currentUserId = user.id;
+            User.currentUser = user;
             const userData = { user_id: user.id}
             CartApi.createCart(userData)
-            debugger
         })
         .catch(err => console.log(err))
     }

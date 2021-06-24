@@ -114,8 +114,8 @@ class Cart {
         const li = document.createElement('li');
         li.innerHTML = `
         <p>${product.name}</p>
-        <p>${product.jewelryType}</p>
-        <p>${product.metalType}</p>
+        <p>${product.jewelry_type}</p>
+        <p>${product.metal_type}</p>
         <p>${product.size}</p>
         <p>$${product.price}</p>
         `

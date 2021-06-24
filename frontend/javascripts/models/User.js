@@ -1,16 +1,20 @@
 class User {
     static all = [];
-    static currentUserId = null;
+    static currentUser = null;
     
     constructor({id, username}) {
         this.id = id, 
         this.username = username,
+        // this.carts = shopping_cart_ids.forEach(id => {
+        //     debugger
+        //     new Cart(id, this.id)
+        // }),
         User.all.push(this)
     }
 
-    get carts() {
-        return Cart.all.filter(cart => cart.userId === User.currentUserId)
-    }
+    // get carts() {
+    //     return Cart.all.filter(cart => cart.userId === User.currentUserId)
+    // }
 
     display() {
         let listItem = document.createElement('li')
