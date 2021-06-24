@@ -101,7 +101,7 @@ class Cart {
 
     static displayConfirmation() {
         document.querySelector('nav img').style.display = 'none';
-        document.querySelector('nav ul li.nav-element').style.display = 'none';
+        document.getElementById('user-carts').hidden = false;
         document.getElementById('cart').innerHTML = `
         <div id= 'confirmation-msg'>
             <h2>THANK YOU FOR SHOPPING WITH US AT THE JEWELRY STORE!</h2>

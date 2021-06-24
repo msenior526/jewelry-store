@@ -28,7 +28,10 @@ class CartApi {
               body: JSON.stringify(data)
         })
         .then(resp => resp.json())
-        .then(json => Cart.displayConfirmation())
+        .then(json => {
+            User.displayPreviousCarts(json.jewelry_products)
+            Cart.displayConfirmation()
+        })
         .catch(err => console.log(err))
     }
 }

@@ -18,8 +18,14 @@ class UserApi {
             document.getElementById('user-carts').hidden = false;
             const userCarts = Cart.findByUserId(User.currentUser.id)
             user.carts = userCarts;
-            User.displayPreviousCarts(user.carts);
-        })
+            for (let i = 0; i < user.carts.length; i++) { 
+                if (user.carts[i].products.length === 0) { 
+                    user.carts.slice(i, 1); 
+                } else if (user.carts[i].products.length >= 1) {
+                    User.displayPreviousCarts(user.carts[i].products);
+                }
+            }
+            })
         .catch(err => console.log(err))
     }
 }

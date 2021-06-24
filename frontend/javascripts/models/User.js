@@ -2,10 +2,10 @@ class User {
     static all = [];
     static currentUser = null;
     
-    constructor({id, username}) {
+    constructor({id, username, shopping_carts}) {
         this.id = id, 
         this.username = username,
-        this.carts = []
+        this.carts = [],
         User.all.push(this)
     }
 
@@ -37,19 +37,10 @@ class User {
         return this.all.find(user => user.id === id)
     }
 
-    static displayPreviousCarts(carts) {
-
+    static displayPreviousCarts(products) {
         const ul = document.createElement('ul');
         document.getElementById('user-carts').appendChild(ul);
-        for( let i = 0; i < carts.length; i++){ 
-            if (carts[i].products.length === 0) { 
-                carts.slice(i, 1); 
-            } else if (carts[i].products.length >= 1) {
-                const div = document.createElement('div');
-                div.id = `cart-${carts[i].id}`;
-                div.innerText = `Shopping cart`
-                ul.appendChild(div);
-                carts[i].products.forEach(product => {
+                products.forEach(product => {
                 const li = document.createElement('li');
                 li.id = `prod-${product.id}`;
                 li.innerHTML = `
@@ -57,11 +48,8 @@ class User {
                 <p>${product.jewelry_type}</p>
                 <p>$${product.price}</p>
                 `
-                div.appendChild(li);
-                debugger
+                ul.appendChild(li);
             })
-            }
-        }
     }
     
 }
