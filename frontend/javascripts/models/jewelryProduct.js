@@ -64,20 +64,6 @@ class JewelryProduct {
         jewelryList().appendChild(listItem);
             
         let div = document.querySelector(`div#prod-${prod.id}`)
-        switch(prod.jewelryType) {
-            case "necklace":
-                div.style.backgroundImage = "url('images/rose-gold-necklace.jpg')";
-              break;
-            case "ring":
-                div.style.backgroundImage = "url('images/silver-ring.jpg')";
-                break;
-                case "bracelet":
-                    div.style.backgroundImage = "url('images/gold-bracelet.jpeg')";
-              break;
-            default:
-                div.style.backgroundImage = "url('images/rose-gold-necklace.jpg')";
-          }
-
         document.querySelector(`div#prod-${prod.id} button.add-to-cart`).addEventListener('click', (e) => Cart.addItemToCart(prod, e))
    }
 }
