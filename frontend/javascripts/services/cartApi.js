@@ -10,9 +10,9 @@ class CartApi {
         })
         .then(resp => resp.json())
         .then(json => {
-            debugger
             const cart = new Cart(json);
             Cart.currentCart = cart;
+            // User.currentUser.carts.push(Cart.findByUserId(User.currentUser.id))
         })
         .catch(err => console.log(err))
     }

@@ -5,16 +5,9 @@ class User {
     constructor({id, username}) {
         this.id = id, 
         this.username = username,
-        // this.carts = shopping_cart_ids.forEach(id => {
-        //     debugger
-        //     new Cart(id, this.id)
-        // }),
+        this.carts = []
         User.all.push(this)
     }
-
-    // get carts() {
-    //     return Cart.all.filter(cart => cart.userId === User.currentUserId)
-    // }
 
     display() {
         let listItem = document.createElement('li')
@@ -43,4 +36,32 @@ class User {
     static findById(id) {
         return this.all.find(user => user.id === id)
     }
+
+    static displayPreviousCarts(carts) {
+
+        const ul = document.createElement('ul');
+        document.getElementById('user-carts').appendChild(ul);
+        for( let i = 0; i < carts.length; i++){ 
+            if (carts[i].products.length === 0) { 
+                carts.slice(i, 1); 
+            } else if (carts[i].products.length >= 1) {
+                const div = document.createElement('div');
+                div.id = `cart-${carts[i].id}`;
+                div.innerText = `Shopping cart`
+                ul.appendChild(div);
+                carts[i].products.forEach(product => {
+                const li = document.createElement('li');
+                li.id = `prod-${product.id}`;
+                li.innerHTML = `
+                <p>${product.name}</p>
+                <p>${product.jewelry_type}</p>
+                <p>$${product.price}</p>
+                `
+                div.appendChild(li);
+                debugger
+            })
+            }
+        }
+    }
+    
 }

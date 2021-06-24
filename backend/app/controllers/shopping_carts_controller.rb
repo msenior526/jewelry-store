@@ -5,7 +5,7 @@ class ShoppingCartsController < ApplicationController
   def index
     @shopping_carts = ShoppingCart.all
 
-    render json: @shopping_carts.to_json(include: [:jewelry_products])
+    render json: @shopping_carts.to_json(include: [:jewelry_products], except: [:updated_at, :created_at])
   end
 
   # GET /shopping_carts/1
