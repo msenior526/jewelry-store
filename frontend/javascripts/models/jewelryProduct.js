@@ -32,6 +32,7 @@ class JewelryProduct {
     }
 
     static display = (prod) => {
+        debugger
         let listItem = document.createElement('li')
         listItem.innerHTML = `
         <div class='product' id='prod-${prod.id}'>

@@ -36,5 +36,19 @@ document.addEventListener('DOMContentLoaded', event => {
        e.target.parentElement.style.display = 'none';
        mainDiv().style.display = 'block';
     })
+
+    document.getElementById('shrek').addEventListener('click', e => {
+        e.preventDefault();
+        fetch('http://localhost:3000/jewelry_products')
+        .then(resp => resp.json())
+        .then(json => {
+            const shreks = json.data.filter(product => {
+                return product.attributes.name === document.getElementById('shrek').innerText
+            })
+            jewelryList().innerHTML = "";
+            shreks.forEach(shrek => JewelryProduct.display(shrek.attributes))
+        })
+
+    })
 })
         
