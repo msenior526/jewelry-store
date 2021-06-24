@@ -18,7 +18,7 @@ class ShoppingCartsController < ApplicationController
     @shopping_cart = ShoppingCart.new(shopping_cart_params)
 
     if @shopping_cart.save
-      render json: @shopping_cart, status: :created, location: @shopping_cart
+      render json: @shopping_cart.to_json(include: [:jewelry_products], except: [:updated_at, :created_at]), status: :created, location: @shopping_cart
     else
       byebug
       render json: @shopping_cart.errors, status: :unprocessable_entity
@@ -29,7 +29,7 @@ class ShoppingCartsController < ApplicationController
   def update
     @shopping_cart.jewelry_product_ids = shopping_cart_params['jewelry_product_ids']
     if @shopping_cart.save
-      render json: @shopping_cart
+      render json: @shopping_cart.to_json(include: [:jewelry_products])
     else
       render json: @shopping_cart.errors, status: :unprocessable_entity
     end

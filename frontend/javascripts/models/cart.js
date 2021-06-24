@@ -3,10 +3,10 @@ class Cart {
     static currentCart = null;
     static currentCartProducts = null;
 
-    constructor({id, user_id}) {
+    constructor({id, user_id, jewelry_products}) {
         this.id = id,
         this.userId = user_id,
-        this.products = [],
+        this.products = jewelry_products,
         Cart.all.push(this)
     }
 
